@@ -60,7 +60,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 	content: {
 		flexGrow: 1,
-		padding: theme.spacing(3),
+		// spacing between the navbar and the image
+		padding: theme.spacing(1),
 		transition: theme.transitions.create('margin', {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen
@@ -142,14 +143,6 @@ export default function Navbar() {
 					))}
 				</List>
 				<Divider />
-				{/* <List>
-					{[ 'All mail', 'Trash', 'Spam' ].map((text, index) => (
-						<ListItem button key={text}>
-							<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-							<ListItemText primary={text} />
-						</ListItem>
-					))}
-				</List> */}
 			</Drawer>
 			<main
 				className={clsx(classes.content, {
@@ -157,10 +150,6 @@ export default function Navbar() {
 				})}
 			>
 				<div className={classes.drawerHeader} />
-				<img
-					className={classes.foodImg}
-					src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-				/>
 			</main>
 		</div>
 	);

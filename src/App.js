@@ -1,12 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import Nabvar from './components/Navbar/Navbar';
+import { HashRouter } from 'react-router-dom';
+import routes from './routes';
 
 function App() {
 	return (
-		<div className="App">
-			<Nabvar />
-		</div>
+		<HashRouter>
+			<div>
+				<Nabvar />
+				{routes}
+			</div>
+		</HashRouter>
 	);
 }
 
