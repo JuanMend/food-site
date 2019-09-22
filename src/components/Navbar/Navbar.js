@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
 	content: {
 		flexGrow: 1,
 		// spacing between the navbar and the image
-		padding: theme.spacing(1),
+		padding: theme.spacing(0),
 		transition: theme.transitions.create('margin', {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen
@@ -99,6 +99,7 @@ export default function Navbar() {
 		<div className={classes.root}>
 			<CssBaseline />
 			<AppBar
+				style={{ background: '#95a5a6' }}
 				position="fixed"
 				className={clsx(classes.appBar, {
 					[classes.appBarShift]: open
