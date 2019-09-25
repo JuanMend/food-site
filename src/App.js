@@ -6,10 +6,7 @@ import routes from './routes';
 function App() {
 	return (
 		<HashRouter>
-			<div>
-				<Nabvar />
-				{routes}
-			</div>
+			<div>{routes}</div>
 		</HashRouter>
 	);
 }

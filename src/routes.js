@@ -10,9 +10,9 @@ import Recipes from './components/Recipes/Recipes';
 export default (
 	<Switch>
 		{/* <Route path="/recipes" component={Recipes} />
-		<Route path="/signup" component={Signup} />
+		<Route path="/signup" component={Signup} /> */}
 		<Route path="/login" component={Login} />
-		<Route path="/aboutus" component={Aboutus} />
+		{/* <Route path="/aboutus" component={Aboutus} />
         <Route path="/contact" component={Contact} /> */}
 		<Route path="/" component={Home} />
 	</Switch>
