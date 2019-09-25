@@ -16,6 +16,19 @@ const useStyles = makeStyles((theme) => ({
 		backgroundSize: 'cover',
 		backgroundRepeat: 'no-repeat',
 		backgroundPosition: 'center'
+	},
+	mainSection: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		margin: theme.spacing(15, 3)
+	},
+	form: {
+		width: '100%',
+		marginTop: theme.spacing(1)
+	},
+	submit: {
+		margin: theme.spacing(3, 0, 2)
 	}
 }));
 
@@ -25,8 +38,43 @@ export default function Login() {
 
 	return (
 		<Grid container component="main" className={classes.root}>
-			<Grid item xs={false} sm={5} md={6} className={classes.sideImg} />
-			<Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square />
+			<Grid item xs={false} sm={5} md={7} className={classes.sideImg} />
+			<Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+				<div className={classes.mainSection}>
+					<Typography component="h1" variant="h5">
+						Login
+					</Typography>
+					<form className={classes.form} noValidate autoComplete="off">
+						<TextField
+							variant="outlined"
+							margin="normal"
+							required
+							fullWidth
+							id="username"
+							label="Username"
+							className="username"
+							name="username"
+							autoComplete="off"
+							autoFocus
+						/>
+						<TextField
+							variant="outlined"
+							margin="normal"
+							required
+							fullWidth
+							name="password"
+							label="Password"
+							type="password"
+							className="password"
+							id="password"
+							autoComplete="off"
+						/>
+						<Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+							Login
+						</Button>
+					</form>
+				</div>
+			</Grid>
 		</Grid>
 	);
 }
