@@ -42,7 +42,7 @@ export default function Login() {
 			<Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
 				<div className={classes.mainSection}>
 					<Typography component="h1" variant="h5">
-						Login
+						Login To Continue
 					</Typography>
 					<form className={classes.form} noValidate autoComplete="off">
 						<TextField
