@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { makeStyles, useTheme } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -28,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: theme.spacing(1)
 	},
 	submit: {
-		margin: theme.spacing(3, 0, 2)
+		margin: theme.spacing(3, 0, 2),
+		height: '6vh'
 	}
 }));
 
@@ -72,6 +75,14 @@ export default function Login() {
 						<Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
 							Login
 						</Button>
+						<Grid container>
+							<Grid item>
+								{'Dont have an account? '}
+								<Link style={{ color: 'blue' }} to="/signup" variant="body2">
+									Sign up
+								</Link>
+							</Grid>
+						</Grid>
 					</form>
 				</div>
 			</Grid>
