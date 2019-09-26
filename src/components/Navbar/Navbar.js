@@ -99,7 +99,7 @@ export default function Navbar() {
 		<div className={classes.root}>
 			<CssBaseline />
 			<AppBar
-				style={{ background: '#95a5a6' }}
+				style={{ background: 'black' }}
 				position="fixed"
 				className={clsx(classes.appBar, {
 					[classes.appBarShift]: open
@@ -116,7 +116,7 @@ export default function Navbar() {
 						<MenuIcon />
 					</IconButton>
 					<Typography variant="h6" noWrap>
-						Persistent drawer
+						Food Site
 					</Typography>
 				</Toolbar>
 			</AppBar>
