@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
 import { makeStyles, useTheme } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
@@ -31,11 +31,13 @@ const useStyles = makeStyles((theme) => ({
 	},
 	submit: {
 		margin: theme.spacing(3, 0, 2),
-		height: '6vh'
+		height: '6vh',
+		fontSize: '16px'
 	}
 }));
 
 export default function Login() {
+	const [ redirect, setRedirect ] = useState(false);
 	const classes = useStyles();
 	const theme = useTheme();
 
