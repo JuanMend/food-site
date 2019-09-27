@@ -23,6 +23,19 @@ const useStyles = makeStyles((theme) => ({
 	mainImg: {
 		width: '100%',
 		height: '110vh'
+	},
+	titleFood: {
+		textAlign: 'center',
+		marginTop: '10vh',
+		borderBottom: '2px solid lightgray',
+		width: '40%',
+		lineHeight: '60px'
+	},
+	divH1: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		display: 'flex',
+		marginBottom: '4vh'
 	}
 }));
 
@@ -39,9 +52,16 @@ export default function Home() {
 						className={classes.homeImg}
 						src="https://images.unsplash.com/photo-1496412705862-e0088f16f791?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
 					/>
+					<div>
+						<button>Recipes</button>
+						<button>About US</button>
+					</div>
 				</div>
 
 				<Grid>
+					<div className={classes.divH1}>
+						<h1 className={classes.titleFood}>Top Rated Food</h1>
+					</div>
 					<div>
 						<img className={classes.mainImg} src={Main} />
 					</div>
