@@ -6,7 +6,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 const useStyles = makeStyles((theme) => ({
 	root: {
-		height: '35vh',
+		height: '40vh',
 		backgroundColor: 'black'
 	},
 	ulList: {
@@ -41,6 +41,13 @@ const useStyles = makeStyles((theme) => ({
 	},
 	ulListIcon: {
 		listStyleType: 'none'
+	},
+	infoRecipe: {
+		// border: 'solid red',
+		color: 'red',
+		width: '90%',
+		fontSize: '13px',
+		textAlign: 'center'
 	}
 }));
 
@@ -70,6 +77,9 @@ export default function Footer() {
 						</li>
 					</ul>
 				</div>
+			</div>
+			<div className={classes.infoRecipe}>
+				<h1>All Recipes are for show they are not the real Ingredients for the food.</h1>
 			</div>
 		</Grid>
 	);

@@ -100,7 +100,7 @@ export default function Home() {
 							<button className={classes.btnRecipe}>Recipes</button>
 						</Link>
 						<Link to="aboutus">
-							<button className={classes.btnAbout}>About US</button>
+							<button className={classes.btnAbout}>About Us</button>
 						</Link>
 					</div>
 				</div>
