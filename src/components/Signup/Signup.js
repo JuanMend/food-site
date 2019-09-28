@@ -7,7 +7,34 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-const useStyles = makeStyles((theme) => ({}));
+
+const useStyles = makeStyles((theme) => ({
+	root: {
+		height: '100vh'
+	},
+	signUpImg: {
+		backgroundImage:
+			'url(https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)',
+		backgroundSize: 'cover',
+		backgroundRepeat: 'no-repeat',
+		backgroundPosition: 'center'
+	},
+	mainSection: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		margin: theme.spacing(15, 3)
+	},
+	form: {
+		width: '100%',
+		marginTop: theme.spacing(1)
+	},
+	submit: {
+		margin: theme.spacing(3, 0, 2),
+		height: '6vh',
+		fontSize: '16px'
+	}
+}));
 
 export default function Signup() {
 	const [ redirect, setRedirect ] = useState(false);
@@ -20,33 +47,44 @@ export default function Signup() {
 			<Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
 				<div className={classes.mainSection}>
 					<Typography component="h1" variant="h5">
-						Sign Up To Continue
+						Sign up To Continue
 					</Typography>
 					<form className={classes.form} noValidate autoComplete="off">
 						<TextField
-							variant="outline"
+							variant="outlined"
 							margin="normal"
 							required
 							fullWidth
 							id="username"
-							label="username"
+							label="Username"
 							className="username"
 							name="username"
 							autoComplete="off"
 							autoFocus
 						/>
 						<TextField
-							variant="outline"
+							variant="outlined"
 							margin="normal"
 							required
 							fullWidth
 							name="password"
-							label="password"
+							label="Password"
 							type="password"
 							className="password"
 							id="password"
 							autoComplete="off"
 						/>
+						<Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+							Sign up
+						</Button>
+						<Grid container>
+							<Grid item>
+								{'Have an account? '}
+								<Link style={{ color: 'blue' }} to="/login" variant="body2">
+									Login
+								</Link>
+							</Grid>
+						</Grid>
 					</form>
 				</div>
 			</Grid>
