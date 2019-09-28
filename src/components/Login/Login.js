@@ -7,6 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -33,6 +34,16 @@ const useStyles = makeStyles((theme) => ({
 		margin: theme.spacing(3, 0, 2),
 		height: '6vh',
 		fontSize: '16px'
+	},
+	arrowHome: {
+		width: '100%'
+	},
+	alignHome: {
+		justifyContent: 'flex-start',
+		alignItems: 'center',
+		display: 'flex',
+		width: '20%',
+		cursor: 'pointer'
 	}
 }));
 
@@ -45,6 +56,14 @@ export default function Login() {
 		<Grid container component="main" className={classes.root}>
 			<Grid item xs={false} sm={5} md={7} className={classes.sideImg} />
 			<Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+				<div className={classes.arrowHome}>
+					<Link to="/" style={{ textDecoration: 'none', color: '#3f51b5' }}>
+						<Typography component="h1" variant="h5" className={classes.alignHome}>
+							<ArrowBackIcon />
+							Home
+						</Typography>
+					</Link>
+				</div>
 				<div className={classes.mainSection}>
 					<Typography component="h1" variant="h5">
 						Login To Continue

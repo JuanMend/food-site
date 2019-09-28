@@ -59,9 +59,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	btnRecipe: {
 		marginRight: '20px',
-		width: '200px',
-		height: '45px',
-		fontSize: '20px',
+		width: '230px',
+		height: '50px',
+		fontSize: '24px',
 		background: '#3f51b5',
 		color: 'white',
 		border: '2px solid white',
@@ -70,9 +70,9 @@ const useStyles = makeStyles((theme) => ({
 		borderRadius: '5px'
 	},
 	btnAbout: {
-		width: '200px',
-		height: '45px',
-		fontSize: '20px',
+		width: '230px',
+		height: '50px',
+		fontSize: '24px',
 		background: '#3f51b5',
 		color: 'white',
 		border: '2px solid white',
