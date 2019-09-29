@@ -59,7 +59,7 @@ export default function Side(props) {
 		<Hidden mdUp implementation="css">
 			<Drawer
 				variant="temporary"
-				anchor="right"
+				anchor="left"
 				classes={{
 					paper: classes.drawerPaper
 				}}

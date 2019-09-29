@@ -10,13 +10,14 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Avatar from '@material-ui/core/Avatar';
 import Side from '../Side/Side';
-
+import clsx from 'clsx';
+const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1
 	},
 	menuButton: {
-		marginLeft: theme.spacing(2)
+		marginRight: theme.spacing(2)
 	},
 	title: {
 		flexGrow: 1
@@ -26,8 +27,13 @@ const useStyles = makeStyles((theme) => ({
 			display: 'none'
 		}
 	},
-	avatar: {
-		marginRight: theme.spacing(2)
+	appBarShift: {
+		width: `calc(100% - ${drawerWidth}px)`,
+		marginLeft: drawerWidth,
+		transition: theme.transitions.create([ 'margin', 'width' ], {
+			easing: theme.transitions.easing.easeOut,
+			duration: theme.transitions.duration.enteringScreen
+		})
 	}
 }));
 
@@ -46,7 +52,12 @@ export default function NavBar(props) {
 		<div>
 			<div className={classes.root}>
 				<Side open={open} toggleSide={toggleSide} />
-				<AppBar position="static">
+				<AppBar
+					position="fixed"
+					className={clsx(classes.appBar, {
+						[classes.appBarShift]: open
+					})}
+				>
 					<Toolbar>
 						<Typography variant="h6" className={classes.title}>
 							<Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
