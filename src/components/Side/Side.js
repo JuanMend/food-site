@@ -8,12 +8,11 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
-import Lock from '@material-ui/icons/LockOutlined';
-import LocationOn from '@material-ui/icons/LocationOn';
-import Notes from '@material-ui/icons/NotesOutlined';
-import ForumIcon from '@material-ui/icons/ForumOutlined';
-import Directions_car from '@material-ui/icons/DirectionsCar';
-import ViewCompact from '@material-ui/icons/ViewCompact';
+import InfoIcon from '@material-ui/icons/Info';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import FastfoodIcon from '@material-ui/icons/Fastfood';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -65,55 +64,55 @@ export default function Side(props) {
 					paper: classes.drawerPaper
 				}}
 				ModalProps={{
-					keepMounted: true // Better open performance on mobile.
+					keepMounted: true
 				}}
 				open={props.open}
 				onClose={props.toggleSide}
 			>
 				<List>
-					<Link className={classes.links} to="/log">
+					<Link className={classes.links} to="/recipes">
 						<ListItem button>
 							<ListItemIcon>
-								<Notes />
+								<FastfoodIcon />
 							</ListItemIcon>
-							<ListItemText primary="Car Log" />
+							<ListItemText primary="Recipes" />
 						</ListItem>
 					</Link>
-					<Link className={classes.links} to="/garage">
+					<Link className={classes.links} to="/aboutus">
 						<ListItem button>
 							<ListItemIcon>
-								<Directions_car />
+								<InfoIcon />
 							</ListItemIcon>
-							<ListItemText primary="Garage" />
+							<ListItemText primary="About us" />
 						</ListItem>
 					</Link>
-					<Link className={classes.links} to="/near-me">
+					<Link className={classes.links} to="/contact">
 						<ListItem button>
 							<ListItemIcon>
-								<LocationOn />
+								<ContactMailIcon />
 							</ListItemIcon>
-							<ListItemText primary="Find Shop" />
+							<ListItemText primary="Contact" />
 						</ListItem>
 					</Link>
-					<Link className={classes.links} to="/forum">
+					<Link className={classes.links} to="/login">
 						<ListItem button>
 							<ListItemIcon>
-								<ForumIcon />
+								<ExitToAppIcon />
 							</ListItemIcon>
-							<ListItemText primary="Forum" />
+							<ListItemText primary="Login" />
 						</ListItem>
 					</Link>
-					<Link className={classes.links} to="/bestpractices">
+					<Link className={classes.links} to="/signup">
 						<ListItem button>
 							<ListItemIcon>
-								<ViewCompact />
+								<VpnKeyIcon />
 							</ListItemIcon>
-							<ListItemText primary="Best Practices" />
+							<ListItemText primary="Sign up" />
 						</ListItem>
 					</Link>
 				</List>
 				<Divider />
-				<List>
+				{/* <List>
 					<ListItem className={classes.logout} onClick={handleClick}>
 						<ListItemIcon>
 							{' '}
@@ -121,7 +120,7 @@ export default function Side(props) {
 						</ListItemIcon>
 						<ListItemText primary="Logout" />
 					</ListItem>
-				</List>
+				</List> */}
 			</Drawer>
 		</Hidden>
 	);

@@ -50,29 +50,10 @@ export default function NavBar(props) {
 					<Toolbar>
 						<Typography variant="h6" className={classes.title}>
 							<Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-								TurboLog
+								Food Site
 							</Link>
 						</Typography>
-						<Button color="inherit">
-							<Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
-								Login
-							</Link>
-						</Button>
-						<Link to="/account" style={{ textDecoration: 'none', color: 'inherit' }}>
-							<Avatar className={classes.avatar}>
-								<img src={props.image} />
-							</Avatar>
-						</Link>
-						<Button className={classes.routes} color="inherit">
-							<Link to="/forum" style={{ textDecoration: 'none', color: 'inherit' }}>
-								Forum
-							</Link>
-						</Button>
-						<Button className={classes.routes} color="inherit">
-							<Link to="/garage" style={{ textDecoration: 'none', color: 'inherit' }}>
-								Garage
-							</Link>
-						</Button>
+
 						<IconButton
 							edge="start"
 							className={classes.menuButton}
