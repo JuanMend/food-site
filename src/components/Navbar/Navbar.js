@@ -11,6 +11,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Avatar from '@material-ui/core/Avatar';
 import Side from '../Side/Side';
 import clsx from 'clsx';
+
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -26,6 +27,12 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.between('xs', 'sm')]: {
 			display: 'none'
 		}
+	},
+	appBar: {
+		transition: theme.transitions.create([ 'margin', 'width' ], {
+			easing: theme.transitions.easing.sharp,
+			duration: theme.transitions.duration.leavingScreen
+		})
 	},
 	appBarShift: {
 		width: `calc(100% - ${drawerWidth}px)`,
@@ -59,12 +66,6 @@ export default function NavBar(props) {
 					})}
 				>
 					<Toolbar>
-						<Typography variant="h6" className={classes.title}>
-							<Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-								Food Site
-							</Link>
-						</Typography>
-
 						<IconButton
 							edge="start"
 							className={classes.menuButton}
@@ -74,6 +75,11 @@ export default function NavBar(props) {
 						>
 							<MenuIcon />
 						</IconButton>
+						<Typography variant="h6" className={classes.title}>
+							<Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+								Food Site
+							</Link>
+						</Typography>
 					</Toolbar>
 				</AppBar>
 			</div>
