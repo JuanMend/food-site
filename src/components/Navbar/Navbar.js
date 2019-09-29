@@ -1,157 +1,90 @@
-import React from 'react';
-import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import React, { useEffect, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
+import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-
-const drawerWidth = 240;
+import Avatar from '@material-ui/core/Avatar';
+import Side from '../Side/Side';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		display: 'flex'
-	},
-	appBar: {
-		transition: theme.transitions.create([ 'margin', 'width' ], {
-			easing: theme.transitions.easing.sharp,
-			duration: theme.transitions.duration.leavingScreen
-		})
-	},
-	appBarShift: {
-		width: `calc(100% - ${drawerWidth}px)`,
-		marginLeft: drawerWidth,
-		transition: theme.transitions.create([ 'margin', 'width' ], {
-			easing: theme.transitions.easing.easeOut,
-			duration: theme.transitions.duration.enteringScreen
-		})
+		flexGrow: 1
 	},
 	menuButton: {
+		marginLeft: theme.spacing(2)
+	},
+	title: {
+		flexGrow: 1
+	},
+	routes: {
+		[theme.breakpoints.between('xs', 'sm')]: {
+			display: 'none'
+		}
+	},
+	avatar: {
 		marginRight: theme.spacing(2)
-	},
-	hide: {
-		display: 'none'
-	},
-	drawer: {
-		width: drawerWidth,
-		flexShrink: 0
-	},
-	drawerPaper: {
-		width: drawerWidth
-	},
-	drawerHeader: {
-		display: 'flex',
-		alignItems: 'center',
-		padding: theme.spacing(0, 1),
-		...theme.mixins.toolbar,
-		justifyContent: 'flex-end'
-	},
-	content: {
-		flexGrow: 1,
-		// spacing between the navbar and the image
-		padding: theme.spacing(0),
-		transition: theme.transitions.create('margin', {
-			easing: theme.transitions.easing.sharp,
-			duration: theme.transitions.duration.leavingScreen
-		}),
-		marginLeft: -drawerWidth
-	},
-	contentShift: {
-		transition: theme.transitions.create('margin', {
-			easing: theme.transitions.easing.easeOut,
-			duration: theme.transitions.duration.enteringScreen
-		}),
-		marginLeft: 0
-	},
-	foodImg: {
-		margin: 0,
-		padding: 0,
-		width: 100
 	}
 }));
 
-export default function Navbar() {
+export default function NavBar(props) {
+	// useEffect(() => {
+	// 	props.getUserSession();
+	// }, []);
 	const classes = useStyles();
-	const theme = useTheme();
-	const [ open, setOpen ] = React.useState(false);
+	const [ open, setOpen ] = useState(false);
 
-	function handleDrawerOpen() {
-		setOpen(true);
-	}
-
-	function handleDrawerClose() {
-		setOpen(false);
+	function toggleSide() {
+		setOpen(!open);
 	}
 
 	return (
-		<div className={classes.root}>
-			<CssBaseline />
-			<AppBar
-				style={{ background: 'black' }}
-				position="fixed"
-				className={clsx(classes.appBar, {
-					[classes.appBarShift]: open
-				})}
-			>
-				<Toolbar>
-					<IconButton
-						color="inherit"
-						aria-label="open drawer"
-						onClick={handleDrawerOpen}
-						edge="start"
-						className={clsx(classes.menuButton, open && classes.hide)}
-					>
-						<MenuIcon />
-					</IconButton>
-					<Typography variant="h6" noWrap>
-						Food Site
-					</Typography>
-				</Toolbar>
-			</AppBar>
-			<Drawer
-				className={classes.drawer}
-				variant="persistent"
-				anchor="left"
-				open={open}
-				classes={{
-					paper: classes.drawerPaper
-				}}
-			>
-				<div className={classes.drawerHeader}>
-					<IconButton onClick={handleDrawerClose}>
-						{theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-					</IconButton>
-				</div>
-				<Divider />
-				<List>
-					{[ 'Recipes', 'About Us', 'Contact', 'Login', 'Sign Up' ].map((text, index) => (
-						<ListItem button key={text}>
-							<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-							<ListItemText primary={text} />
-						</ListItem>
-					))}
-				</List>
-				<Divider />
-			</Drawer>
-			<main
-				className={clsx(classes.content, {
-					[classes.contentShift]: open
-				})}
-			>
-				<div className={classes.drawerHeader} />
-			</main>
+		<div>
+			<div className={classes.root}>
+				<Side open={open} toggleSide={toggleSide} />
+				<AppBar position="static">
+					<Toolbar>
+						<Typography variant="h6" className={classes.title}>
+							<Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+								TurboLog
+							</Link>
+						</Typography>
+						<Button color="inherit">
+							<Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
+								Login
+							</Link>
+						</Button>
+						<Link to="/account" style={{ textDecoration: 'none', color: 'inherit' }}>
+							<Avatar className={classes.avatar}>
+								<img src={props.image} />
+							</Avatar>
+						</Link>
+						<Button className={classes.routes} color="inherit">
+							<Link to="/forum" style={{ textDecoration: 'none', color: 'inherit' }}>
+								Forum
+							</Link>
+						</Button>
+						<Button className={classes.routes} color="inherit">
+							<Link to="/garage" style={{ textDecoration: 'none', color: 'inherit' }}>
+								Garage
+							</Link>
+						</Button>
+						<IconButton
+							edge="start"
+							className={classes.menuButton}
+							color="inherit"
+							aria-label="Menu"
+							onClick={toggleSide}
+						>
+							<MenuIcon />
+						</IconButton>
+					</Toolbar>
+				</AppBar>
+			</div>
 		</div>
 	);
 }

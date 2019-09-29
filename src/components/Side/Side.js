@@ -14,8 +14,6 @@ import Notes from '@material-ui/icons/NotesOutlined';
 import ForumIcon from '@material-ui/icons/ForumOutlined';
 import Directions_car from '@material-ui/icons/DirectionsCar';
 import ViewCompact from '@material-ui/icons/ViewCompact';
-import { connect } from 'react-redux';
-import { logout } from '../../ducks/authReducer';
 
 const useStyles = makeStyles((theme) => ({
 	root: {

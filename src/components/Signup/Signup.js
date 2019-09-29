@@ -42,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'center',
 		display: 'flex',
 		width: '20%',
-		cursor: 'pointer'
+		cursor: 'pointer',
+		fontFamily: 'Times New Roman, Times, serif'
 	}
 }));
 
