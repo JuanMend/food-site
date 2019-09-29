@@ -13,7 +13,7 @@ export default (
 		<Route path="/signup" component={Signup} />
 		<Route path="/login" component={Login} />
 		<Route path="/aboutus" component={Aboutus} />
-		{/* <Route path="/contact" component={Contact} /> */}
+		<Route path="/contact" component={Contact} />
 		<Route path="/" component={Home} />
 	</Switch>
 );
