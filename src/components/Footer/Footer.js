@@ -6,7 +6,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 const useStyles = makeStyles((theme) => ({
 	root: {
-		height: '40vh',
+		height: '43vh',
 		backgroundColor: 'black'
 	},
 	ulList: {
@@ -33,10 +33,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	contDiv: {
 		// border: 'solid blue',
-		marginTop: '10vh',
+		marginTop: '2vh',
 		width: '100%',
 		justifyContent: 'center',
-		alignItems: 'flex-start',
+		alignItems: 'center',
 		display: 'flex'
 	},
 	ulListIcon: {
@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
 	infoRecipe: {
 		// border: 'solid red',
 		color: 'red',
+		height: '15%',
 		width: '90%',
 		fontSize: '13px',
 		textAlign: 'center'
