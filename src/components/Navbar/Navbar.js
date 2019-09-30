@@ -60,7 +60,8 @@ export default function NavBar(props) {
 			<div className={classes.root}>
 				<Side open={open} toggleSide={toggleSide} />
 				<AppBar
-					position="fixed"
+					style={{ background: 'transparent' }}
+					position="absolute"
 					className={clsx(classes.appBar, {
 						[classes.appBarShift]: open
 					})}
