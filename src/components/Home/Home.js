@@ -57,11 +57,11 @@ const useStyles = makeStyles((theme) => ({
 	btnLinks: {
 		// border: 'solid red',
 		height: '45vh',
-		width: '68vw',
+		width: '65vw',
 		justifyContent: 'center',
 		alignItems: 'flex-end',
 		display: 'flex',
-		marginLeft: '26vw'
+		marginLeft: '33vw'
 	},
 	topImgDiv: {
 		justifyContent: 'center',
@@ -158,15 +158,21 @@ export default function Home() {
 							<ul className="iconsOnHome">
 								<li>
 									<InstagramIcon
+										className="animated 2s bounce delay-1s"
+										style={{ color: 'white', fontSize: '30px' }}
+									/>
+								</li>
+								<li>
+									<FacebookIcon
 										className="animated 2s bounce delay-2s"
 										style={{ color: 'white', fontSize: '30px' }}
 									/>
 								</li>
 								<li>
-									<FacebookIcon style={{ color: 'white', fontSize: '30px' }} />
-								</li>
-								<li>
-									<TwitterIcon style={{ color: 'white', fontSize: '30px' }} />
+									<TwitterIcon
+										className="animated 2s bounce delay-3s"
+										style={{ color: 'white', fontSize: '30px' }}
+									/>
 								</li>
 							</ul>
 						</div>
