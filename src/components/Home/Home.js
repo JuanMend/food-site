@@ -139,12 +139,12 @@ export default function Home() {
 			<Grid container className={classes.root}>
 				<div className={classes.topImgDiv}>
 					<div className={classes.btnLinks}>
-						<Link to="/recipes">
+						<Link to="/recipes" style={{ textDecoration: 'none' }}>
 							<Button variant="contained" color="primary" className={classes.button}>
 								Recipes
 							</Button>
 						</Link>
-						<Link to="aboutus">
+						<Link to="aboutus" style={{ textDecoration: 'none' }}>
 							<Button variant="contained" color="primary" className={classes.button}>
 								About Us
 							</Button>
@@ -161,7 +161,7 @@ export default function Home() {
 						<div className="hold">
 							<div className="divForHam">
 								<div className="hamRecipeBtn">
-									<p className="titleRecipe">Get out Delicious hamburger Recipe</p>
+									<p className="titleRecipe">Get our Delicious hamburger Recipe</p>
 									<Button variant="outlined" color="primary" className={classes.button}>
 										Recipe
 									</Button>
@@ -172,7 +172,7 @@ export default function Home() {
 						<div className="hold">
 							<div className="divForTacos">
 								<div className="tacosRecipeBtn">
-									<p className="titleRecipe">Get out Delicious Tacos Recipe</p>
+									<p className="titleRecipe">Get our Delicious Tacos Recipe</p>
 									<Button variant="outlined" color="primary" className={classes.button}>
 										Recipe
 									</Button>
@@ -183,7 +183,7 @@ export default function Home() {
 						<div className="hold">
 							<div className="divForSushi">
 								<div className="sushiRecipeBtn">
-									<p className="titleRecipe">Get out Delicious Sushi Recipe</p>
+									<p className="titleRecipe">Get our Delicious Sushi Recipe</p>
 									<Button variant="outlined" color="primary" className={classes.button}>
 										Recipe
 									</Button>
@@ -194,7 +194,7 @@ export default function Home() {
 						<div className="hold">
 							<div className="divForDesert">
 								<div className="desertRecipeBtn">
-									<p className="titleRecipe">Get out Delicious Desert Recipe</p>
+									<p className="titleRecipe">Get our Delicious Desert Recipe</p>
 									<Button variant="outlined" color="primary" className={classes.button}>
 										Recipe
 									</Button>
