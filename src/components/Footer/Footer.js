@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { makeStyles, useTheme } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -60,9 +62,15 @@ export default function Footer() {
 			<div className={classes.contDiv}>
 				<div className={classes.mainDivUl}>
 					<ul className={classes.ulList}>
-						<li>CONTACT</li>
-						<li>ABOUT US</li>
-						<li>HOME</li>
+						<Link to="/contact" style={{ textDecoration: 'none', color: 'black' }}>
+							<li>CONTACT</li>
+						</Link>
+						<Link to="/aboutus" style={{ textDecoration: 'none', color: 'black' }}>
+							<li>ABOUT US</li>
+						</Link>
+						<Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+							<li>HOME</li>
+						</Link>
 					</ul>
 				</div>
 				<div className={classes.iconsUl}>

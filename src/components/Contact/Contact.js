@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
-import Person from '../../Pics/person-helping.png';
+import Person from '../../Pics/customer-service-phone.png';
 import Footer from '.././Footer/Footer';
 
 import { makeStyles, useTheme } from '@material-ui/styles';
@@ -10,7 +10,7 @@ import { Grid } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
 	personHelpImg: {
 		width: '100%',
-		height: '50vh'
+		height: '55vh'
 	},
 	contactTime: {
 		textAlign: 'center',
