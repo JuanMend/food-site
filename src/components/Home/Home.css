@@ -1,27 +1,36 @@
 .hamRecipeBtn {
-	border: solid blue;
-	/* justify-content: flex-end;
-	align-items: center;
-	display: flex; */
-	flex-direction: column;
-	/* margin-right: 20vw; */
-	width: 40%;
-}
-.hold {
-	border: solid red;
+	/* border: solid blue; */
 	justify-content: center;
 	align-items: center;
 	display: flex;
+	flex-direction: column;
+	/* margin-right: 20vw; */
+	width: 25%;
+	margin-right: 21vw;
+	margin-top: 8vh;
+}
+
+.hold {
+	/* border: solid red; */
 }
 .titleRecipe {
-	font-size: 20px;
-	border: solid red;
+	font-size: 21px;
+	font-family: 'Times New Roman', Times, serif;
+	/* border: solid red; */
 	width: 50%;
 }
 .divForHam {
-	border: solid yellow;
+	/* border: solid yellow; */
 	justify-content: flex-end;
 	align-items: center;
 	display: flex;
 	margin-top: 10vh;
+}
+.mainImg {
+	background-image: url('../../Pics/Main-Page.png');
+	background-position: center;
+	background-size: cover;
+	width: 97vw;
+	height: 150vh;
+	/* border: solid pink; */
 }

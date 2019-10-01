@@ -23,11 +23,11 @@ const useStyles = makeStyles((theme) => ({
 		width: 1440,
 		height: 650
 	},
-	mainImg: {
-		width: '100%',
-		height: '110vh',
-		border: 'solid pink'
-	},
+	// mainImg: {
+	// 	width: '100%',
+	// 	height: '110vh',
+	// 	border: 'solid pink',
+	// },
 	titleFood: {
 		textAlign: 'center',
 		marginTop: '10vh',
@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
 		margin: theme.spacing(4),
 		height: '50px',
 		width: '230px',
-		fontSize: '16px'
+		fontSize: '18px'
 	}
 }));
 
@@ -154,17 +154,17 @@ export default function Home() {
 						<h1 className={classes.titleFood}>TOP RATED FOOD</h1>
 					</div>
 
-					<div className="hold">
-						<div className="divForHam">
-							<div className="hamRecipeBtn">
-								<p className="titleRecipe">Get out Delicious hamburger Recipe</p>
-								<Button variant="contained" color="primary" className={classes.button}>
-									Recipe
-								</Button>
+					<div className="mainImg">
+						<div className="hold">
+							<div className="divForHam">
+								<div className="hamRecipeBtn">
+									<p className="titleRecipe">Get out Delicious hamburger Recipe</p>
+									<Button variant="outlined" color="primary" className={classes.button}>
+										Recipe
+									</Button>
+								</div>
 							</div>
 						</div>
-						<img className={classes.mainImg} src={Main} />
-						<div />
 					</div>
 				</Grid>
 
@@ -177,7 +177,7 @@ export default function Home() {
 							We Help our Customers lifes a little easier by giving them the recipes of the greatest food
 							thier is to exist.
 							<Link to="/aboutus" style={{ textDecoration: 'none' }}>
-								<Button variant="contained" color="primary" className={classes.button}>
+								<Button variant="outlined" color="primary" className={classes.button}>
 									More About Us
 								</Button>
 							</Link>
