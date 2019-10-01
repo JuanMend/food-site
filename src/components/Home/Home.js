@@ -14,6 +14,9 @@ import TextField from '@material-ui/core/TextField';
 import InputBase from '@material-ui/core/InputBase';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -53,11 +56,12 @@ const useStyles = makeStyles((theme) => ({
 
 	btnLinks: {
 		// border: 'solid red',
-		height: '30vh',
-		width: '40vw',
+		height: '45vh',
+		width: '68vw',
 		justifyContent: 'center',
 		alignItems: 'flex-end',
-		display: 'flex'
+		display: 'flex',
+		marginLeft: '26vw'
 	},
 	topImgDiv: {
 		justifyContent: 'center',
@@ -120,6 +124,7 @@ const useStyles = makeStyles((theme) => ({
 		height: '50px',
 		width: '230px',
 		fontSize: '18px'
+		// marginLeft: '10vw'
 	},
 	aboutButton: {
 		margin: theme.spacing(4),
@@ -149,6 +154,22 @@ export default function Home() {
 								About Us
 							</Button>
 						</Link>
+						<div className="mainHoldIcons">
+							<ul className="iconsOnHome">
+								<li>
+									<InstagramIcon
+										className="animated 2s bounce delay-2s"
+										style={{ color: 'white', fontSize: '30px' }}
+									/>
+								</li>
+								<li>
+									<FacebookIcon style={{ color: 'white', fontSize: '30px' }} />
+								</li>
+								<li>
+									<TwitterIcon style={{ color: 'white', fontSize: '30px' }} />
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 
