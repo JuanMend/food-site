@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Main from '../../Pics/Main-Page.png';
 import Family from '../../Pics/family-smile.png';
 import Footer from '../Footer/Footer';
+import './Home.css';
 
 import { makeStyles, useTheme } from '@material-ui/core';
 import { borders } from '@material-ui/system';
@@ -12,6 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import InputBase from '@material-ui/core/InputBase';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -23,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 	mainImg: {
 		width: '100%',
-		height: '110vh'
+		height: '110vh',
+		border: 'solid pink'
 	},
 	titleFood: {
 		textAlign: 'center',
@@ -91,6 +94,9 @@ const useStyles = makeStyles((theme) => ({
 		marginRight: '20px'
 		// border: 'solid red'
 	},
+	// recipeBtns: {
+	// 	border: 'solid red'
+	// },
 	// Most of the Buttons
 	btnRecipe: {
 		marginRight: '20px',
@@ -114,6 +120,13 @@ const useStyles = makeStyles((theme) => ({
 		outline: 'none',
 		cursor: 'pointer',
 		borderRadius: '5px'
+	},
+
+	button: {
+		margin: theme.spacing(4),
+		height: '50px',
+		width: '230px',
+		fontSize: '16px'
 	}
 }));
 
@@ -140,10 +153,21 @@ export default function Home() {
 					<div className={classes.divH1}>
 						<h1 className={classes.titleFood}>TOP RATED FOOD</h1>
 					</div>
-					<div>
+
+					<div className="hold">
+						<div className="divForHam">
+							<div className="hamRecipeBtn">
+								<p className="titleRecipe">Get out Delicious hamburger Recipe</p>
+								<Button variant="contained" color="primary" className={classes.button}>
+									Recipe
+								</Button>
+							</div>
+						</div>
 						<img className={classes.mainImg} src={Main} />
+						<div />
 					</div>
 				</Grid>
+
 				<Grid>
 					<div className={classes.aboutUsH1}>
 						<h1 className={classes.aboutUstitle}>A LITTLE ABOUT US</h1>
@@ -152,6 +176,11 @@ export default function Home() {
 						<p className={classes.infoAboutUs}>
 							We Help our Customers lifes a little easier by giving them the recipes of the greatest food
 							thier is to exist.
+							<Link to="/aboutus" style={{ textDecoration: 'none' }}>
+								<Button variant="contained" color="primary" className={classes.button}>
+									More About Us
+								</Button>
+							</Link>
 						</p>
 						<img className={classes.familyImg} src={Family} />
 					</div>

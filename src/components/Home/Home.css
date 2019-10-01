@@ -1,0 +1,27 @@
+.hamRecipeBtn {
+	border: solid blue;
+	/* justify-content: flex-end;
+	align-items: center;
+	display: flex; */
+	flex-direction: column;
+	/* margin-right: 20vw; */
+	width: 40%;
+}
+.hold {
+	border: solid red;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.titleRecipe {
+	font-size: 20px;
+	border: solid red;
+	width: 50%;
+}
+.divForHam {
+	border: solid yellow;
+	justify-content: flex-end;
+	align-items: center;
+	display: flex;
+	margin-top: 10vh;
+}
