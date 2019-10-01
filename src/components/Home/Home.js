@@ -23,11 +23,7 @@ const useStyles = makeStyles((theme) => ({
 		width: 1440,
 		height: 650
 	},
-	// mainImg: {
-	// 	width: '100%',
-	// 	height: '110vh',
-	// 	border: 'solid pink',
-	// },
+
 	titleFood: {
 		textAlign: 'center',
 		marginTop: '10vh',
@@ -92,11 +88,8 @@ const useStyles = makeStyles((theme) => ({
 		width: '35%',
 		height: '20vh',
 		marginRight: '20px'
-		// border: 'solid red'
 	},
-	// recipeBtns: {
-	// 	border: 'solid red'
-	// },
+
 	// Most of the Buttons
 	btnRecipe: {
 		marginRight: '20px',
@@ -123,6 +116,12 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	button: {
+		margin: theme.spacing(1),
+		height: '50px',
+		width: '230px',
+		fontSize: '18px'
+	},
+	aboutButton: {
 		margin: theme.spacing(4),
 		height: '50px',
 		width: '230px',
@@ -165,6 +164,39 @@ export default function Home() {
 								</div>
 							</div>
 						</div>
+
+						<div className="hold">
+							<div className="divForTacos">
+								<div className="tacosRecipeBtn">
+									<p className="titleRecipe">Get out Delicious Tacos Recipe</p>
+									<Button variant="outlined" color="primary" className={classes.button}>
+										Recipe
+									</Button>
+								</div>
+							</div>
+						</div>
+
+						<div className="hold">
+							<div className="divForSushi">
+								<div className="sushiRecipeBtn">
+									<p className="titleRecipe">Get out Delicious Sushi Recipe</p>
+									<Button variant="outlined" color="primary" className={classes.button}>
+										Recipe
+									</Button>
+								</div>
+							</div>
+						</div>
+
+						<div className="hold">
+							<div className="divForDesert">
+								<div className="desertRecipeBtn">
+									<p className="titleRecipe">Get out Delicious Desert Recipe</p>
+									<Button variant="outlined" color="primary" className={classes.button}>
+										Recipe
+									</Button>
+								</div>
+							</div>
+						</div>
 					</div>
 				</Grid>
 
@@ -177,7 +209,7 @@ export default function Home() {
 							We Help our Customers lifes a little easier by giving them the recipes of the greatest food
 							thier is to exist.
 							<Link to="/aboutus" style={{ textDecoration: 'none' }}>
-								<Button variant="outlined" color="primary" className={classes.button}>
+								<Button variant="outlined" color="primary" className={classes.aboutButton}>
 									More About Us
 								</Button>
 							</Link>
