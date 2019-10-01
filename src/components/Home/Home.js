@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundRepeat: 'no-repeat',
 		backgroundPosition: 'center',
 		backgroundImage:
-			'url(https://images.unsplash.com/photo-1496412705862-e0088f16f791?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)'
+			'url(https://images.unsplash.com/photo-1491185841098-9ce20f966624?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)'
 	},
 	familyImg: {
 		width: '40%',
@@ -140,12 +140,12 @@ export default function Home() {
 				<div className={classes.topImgDiv}>
 					<div className={classes.btnLinks}>
 						<Link to="/recipes" style={{ textDecoration: 'none' }}>
-							<Button variant="contained" color="primary" className={classes.button}>
+							<Button variant="outlined" color="primary" className={classes.button}>
 								Recipes
 							</Button>
 						</Link>
 						<Link to="aboutus" style={{ textDecoration: 'none' }}>
-							<Button variant="contained" color="primary" className={classes.button}>
+							<Button variant="outlined" color="primary" className={classes.button}>
 								About Us
 							</Button>
 						</Link>
