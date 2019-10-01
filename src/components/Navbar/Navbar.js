@@ -60,8 +60,8 @@ export default function NavBar(props) {
 			<div className={classes.root}>
 				<Side open={open} toggleSide={toggleSide} />
 				<AppBar
-					style={{ background: 'transparent' }}
-					position="absolute"
+					style={{ background: 'white' }}
+					position="fixed"
 					className={clsx(classes.appBar, {
 						[classes.appBarShift]: open
 					})}
@@ -70,14 +70,14 @@ export default function NavBar(props) {
 						<IconButton
 							edge="start"
 							className={classes.menuButton}
-							color="inherit"
+							color="black"
 							aria-label="Menu"
 							onClick={toggleSide}
 						>
 							<MenuIcon />
 						</IconButton>
 						<Typography variant="h6" className={classes.title}>
-							<Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+							<Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
 								Food Site
 							</Link>
 						</Typography>

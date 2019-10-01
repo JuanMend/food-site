@@ -7,10 +7,10 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		height: '43vh',
-		backgroundColor: 'black'
+		backgroundColor: '#fafafa'
 	},
 	ulList: {
-		color: 'white',
+		color: 'black',
 		listStyleType: 'none',
 		fontSize: '16px',
 		lineHeight: '30px',
@@ -68,13 +68,13 @@ export default function Footer() {
 				<div className={classes.iconsUl}>
 					<ul className={classes.ulListIcon}>
 						<li>
-							<InstagramIcon style={{ color: 'white', fontSize: '30px' }} />
+							<InstagramIcon style={{ color: 'black', fontSize: '30px' }} />
 						</li>
 						<li>
-							<FacebookIcon style={{ color: 'white', fontSize: '30px' }} />
+							<FacebookIcon style={{ color: 'black', fontSize: '30px' }} />
 						</li>
 						<li>
-							<TwitterIcon style={{ color: 'white', fontSize: '30px' }} />
+							<TwitterIcon style={{ color: 'black', fontSize: '30px' }} />
 						</li>
 					</ul>
 				</div>
