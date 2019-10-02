@@ -42,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex'
 	},
 	ulListIcon: {
-		listStyleType: 'none'
+		listStyleType: 'none',
+		cursor: 'pointer'
 	},
 	infoRecipe: {
 		// border: 'solid red',
