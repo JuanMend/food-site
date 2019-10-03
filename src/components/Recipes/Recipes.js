@@ -13,7 +13,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Sushi from '../../Pics/sushi.png';
+import Sushi from '../../Pics/main-sushi.png';
 import Hamburger from '../../Pics/hamburger.png';
 import Tacos from '../../Pics/main-tacos.png';
 import Cupcakes from '../../Pics/cupcakes.png';
@@ -35,6 +35,11 @@ const images = [
 	{
 		url: Chicken,
 		title: 'Chicken',
+		width: '40%'
+	},
+	{
+		url: Tacos,
+		title: 'Tacos',
 		width: '40%'
 	},
 
