@@ -26,15 +26,12 @@ const useStyles = makeStyles((theme) => ({
 		padding: '50px'
 	},
 	mainDivUl: {
-		// border: 'solid orange',
-		width: '50%'
+		width: '70%'
 	},
 	iconsUl: {
-		// border: 'solid red',
-		width: '40%'
+		width: '30%'
 	},
 	contDiv: {
-		// border: 'solid blue',
 		marginTop: '2vh',
 		width: '100%',
 		justifyContent: 'center',
