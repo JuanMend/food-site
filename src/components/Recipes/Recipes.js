@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
 	root: {
 		width: '100%',
 		flexWrap: 'wrap',
-		marginTop: '9vh',
+		marginTop: '7vh',
 		display: 'flex',
 		justifyContent: 'space-around',
 		overflow: 'hidden'

@@ -145,12 +145,12 @@ export default function Home() {
 				<div className={classes.topImgDiv}>
 					<div className={classes.btnLinks}>
 						<Link to="/recipes" style={{ textDecoration: 'none' }}>
-							<Button variant="outlined" color="primary" className={classes.button}>
+							<Button variant="contained" color="primary" className={classes.button}>
 								Recipes
 							</Button>
 						</Link>
 						<Link to="aboutus" style={{ textDecoration: 'none' }}>
-							<Button variant="outlined" color="primary" className={classes.button}>
+							<Button variant="contained" color="primary" className={classes.button}>
 								About Us
 							</Button>
 						</Link>
