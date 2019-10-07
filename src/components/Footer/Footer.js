@@ -60,14 +60,14 @@ export default function Footer() {
 			<div className={classes.contDiv}>
 				<div className={classes.mainDivUl}>
 					<ul className={classes.ulList}>
+						<Link to="/recipes" style={{ textDecoration: 'none', color: 'black' }}>
+							<li>RECIPES</li>
+						</Link>
 						<Link to="/contact" style={{ textDecoration: 'none', color: 'black' }}>
 							<li>CONTACT</li>
 						</Link>
 						<Link to="/aboutus" style={{ textDecoration: 'none', color: 'black' }}>
 							<li>ABOUT US</li>
-						</Link>
-						<Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-							<li>HOME</li>
 						</Link>
 					</ul>
 				</div>
