@@ -5,3 +5,8 @@
 	display: flex;
 	flex-wrap: wrap;
 }
+.someRecipes {
+	text-align: center;
+	font-family: 'Times New Roman', Times, serif;
+	margin-top: 10vh;
+}

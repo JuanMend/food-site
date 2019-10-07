@@ -161,8 +161,8 @@ const useStyles = makeStyles((theme) => ({
 		transition: theme.transitions.create('opacity')
 	},
 	card: {
-		maxWidth: 325,
-		marginTop: '10vh'
+		maxWidth: 315,
+		marginTop: '5vh'
 	},
 	media: {
 		height: 0,
@@ -228,6 +228,9 @@ export default function Recipes() {
 						</ButtonBase>
 					))}
 				</GridList>
+			</div>
+			<div>
+				<h1 className="someRecipes">HERE'S SOME OF OUR RECIPES</h1>
 			</div>
 			<Grid>
 				<div className="mainCard">
