@@ -16,9 +16,10 @@ const signup = async (req, res) => {
 };
 
 const login = async (req, res) => {
+	console.log(req.body);
 	const { username, password } = req.body;
 	const db = req.app.get('db');
-	const user = await db.get_user(username).catch((error) => console.log(error));
+	const user = await db.get_user(username);
 	if (user.length > 0) {
 		const userMatch = await bcrypt.compare(password, user[0].password);
 		if (userMatch) {

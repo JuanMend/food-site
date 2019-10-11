@@ -28,7 +28,7 @@ export function getUser() {
 }
 
 export function login(username, password) {
-	let data = axios.get('/auth/login', { username, password });
+	let data = axios.post('/auth/login', { username, password });
 	return {
 		type: LOGIN,
 		payload: data

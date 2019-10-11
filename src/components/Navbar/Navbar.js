@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getUser } from '../../Redux/reducer';
 
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -44,10 +46,10 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-export default function NavBar(props) {
-	// useEffect(() => {
-	// 	props.getUserSession();
-	// }, []);
+function Navbar(props) {
+	useEffect(() => {
+		props.getUser();
+	}, []);
 	const classes = useStyles();
 	const [ open, setOpen ] = useState(false);
 
@@ -87,3 +89,11 @@ export default function NavBar(props) {
 		</div>
 	);
 }
+
+const mapStateToProps = (state) => {
+	return {
+		username: state.reducer.username
+	};
+};
+
+export default connect(mapStateToProps, { getUser })(Navbar);
