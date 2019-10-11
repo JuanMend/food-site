@@ -83,7 +83,9 @@ function Navbar(props) {
 								Food Site
 							</Link>
 						</Typography>
-						{props.username ? <div style={{ color: 'black' }}>Welcome: {props.username}</div> : null}
+						{props.username ? (
+							<div style={{ color: 'black', fontSize: '20px' }}>Welcome: {props.username}</div>
+						) : null}
 					</Toolbar>
 				</AppBar>
 			</div>
