@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { login } from '../../Redux/reducer';
 
 import { makeStyles, useTheme } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
@@ -48,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-export default function Login() {
+function Login() {
 	const [ redirect, setRedirect ] = useState(false);
 	const classes = useStyles();
 	const theme = useTheme();
@@ -111,3 +113,12 @@ export default function Login() {
 		</Grid>
 	);
 }
+
+const mapStateToProps = (state) => {
+	return {
+		username: state.reducer.username,
+		password: state.reducer.password
+	};
+};
+
+export default connect(mapStateToProps, { login })(Login);

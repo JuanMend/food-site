@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signup, handle } from '../../Redux/reducer';
 
 import { makeStyles, useTheme } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
@@ -47,11 +49,22 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-export default function Signup() {
+function Signup(props) {
 	const [ redirect, setRedirect ] = useState(false);
 	const classes = useStyles();
-	const theme = useTheme();
 
+	const handlerChange = (e) => {
+		props.handle(e.target.name, e.target.value);
+	};
+
+	const handlerSignup = () => {
+		props.signup(props.username, props.password);
+		setRedirect(true);
+	};
+
+	if (redirect) {
+		return <Redirect to="/" />;
+	}
 	return (
 		<Grid container component="main" className={classes.root}>
 			<Grid item xs={false} sm={5} md={7} className={classes.signUpImg} />
@@ -80,6 +93,7 @@ export default function Signup() {
 							name="username"
 							autoComplete="off"
 							autoFocus
+							onChange={handlerChange}
 						/>
 						<TextField
 							variant="outlined"
@@ -92,8 +106,16 @@ export default function Signup() {
 							className="password"
 							id="password"
 							autoComplete="off"
+							onChange={handlerChange}
 						/>
-						<Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+						<Button
+							type="submit"
+							fullWidth
+							variant="contained"
+							color="primary"
+							className={classes.submit}
+							onClick={handlerSignup}
+						>
 							Sign up
 						</Button>
 						<Grid container>
@@ -110,3 +132,12 @@ export default function Signup() {
 		</Grid>
 	);
 }
+
+const mapStateToProps = (state) => {
+	return {
+		username: state.reducer.username,
+		password: state.reducer.password
+	};
+};
+
+export default connect(mapStateToProps, { signup, handle })(Signup);

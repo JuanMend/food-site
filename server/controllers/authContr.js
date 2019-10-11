@@ -4,12 +4,12 @@ const signup = async (req, res) => {
 	console.log(req.body);
 	const { username, password } = req.body;
 	const db = req.app.get('db');
-	const user = await get_user(username).catch((error) => console.log(error));
+	const user = await db.get_user(username).catch((error) => console.log(error));
 	if (user.length > 0) {
 		res.status(403).json('Username Taken');
 	} else {
 		const hash = await bcrypt.hash(password, 12);
-		await signup_user(username, hash);
+		await db.signup_user(username, hash);
 		req.session.user = { username };
 		res.status(200).json(req.session.user);
 	}

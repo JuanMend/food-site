@@ -10,6 +10,14 @@ const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
 const SIGNUP = 'SIGNUP';
 const GET_USER = 'GET_USER';
+const HANDLE = 'HANDLE';
+
+export function handle(name, value) {
+	return {
+		type: HANDLE,
+		payload: { name, value }
+	};
+}
 
 export function getUser() {
 	let user = axios.get('/auth/getuser');
@@ -69,7 +77,11 @@ export default function reducer(state = initialState, action) {
 				username: '',
 				password: ''
 			};
-
+		case HANDLE:
+			return {
+				...state,
+				[payload.name]: payload.value
+			};
 		default:
 			return state;
 	}
