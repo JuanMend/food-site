@@ -46,6 +46,30 @@ export function logOut() {
 export default function reducer(state = initialState, action) {
 	const { type, payload } = action;
 	switch (type) {
+		case `${LOGIN}_FULFILLED`:
+			return {
+				...state,
+				username: payload.data.username,
+				password: payload.data.password
+			};
+		case `${GET_USER}_FULFILLED`:
+			return {
+				...state,
+				username: payload.data.username
+			};
+		case `${SIGNUP}_FULLFILLED`:
+			return {
+				...state,
+				username: payload.data.username,
+				password: payload.data.password
+			};
+		case `${LOGOUT}_FULFILLED`:
+			return {
+				...state,
+				username: '',
+				password: ''
+			};
+
 		default:
 			return state;
 	}
