@@ -17,6 +17,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import LockIcon from '@material-ui/icons/Lock';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -56,6 +57,7 @@ function Side(props) {
 	useEffect(() => {
 		props.getUser();
 	}, []);
+
 	const classes = useStyles();
 
 	function handleLogout() {
@@ -85,6 +87,14 @@ function Side(props) {
 										<FastfoodIcon />
 									</ListItemIcon>
 									<ListItemText primary="Recipes" />
+								</ListItem>
+							</Link>
+							<Link className={classes.links} to="/favorites">
+								<ListItem button>
+									<ListItemIcon>
+										<FavoriteIcon />
+									</ListItemIcon>
+									<ListItemText primary="Favorites" />
 								</ListItem>
 							</Link>
 							<Link className={classes.links} to="/aboutus">

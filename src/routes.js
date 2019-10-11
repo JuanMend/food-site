@@ -6,9 +6,11 @@ import Aboutus from './components/Aboutus/Aboutus';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Recipes from './components/Recipes/Recipes';
+import Favorites from './components/Favorites/Favorites';
 
 export default (
 	<Switch>
+		<Route path="/favorites" component={Favorites} />
 		<Route path="/recipes" component={Recipes} />
 		<Route path="/signup" component={Signup} />
 		<Route path="/login" component={Login} />
