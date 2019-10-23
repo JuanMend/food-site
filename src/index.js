@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './Redux/store';
+import { CssBaseline } from '@material-ui/core';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';

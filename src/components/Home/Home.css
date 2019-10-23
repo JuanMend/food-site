@@ -15,6 +15,7 @@
 	width: 25%;
 	margin-left: 25vw;
 	margin-top: 10vh;
+	/* border: solid red; */
 }
 .sushiRecipeBtn {
 	justify-content: center;
@@ -26,7 +27,7 @@
 	margin-top: 6vh;
 }
 
-.desertRecipeBtn {
+.dessertRecipeBtn {
 	justify-content: center;
 	align-items: center;
 	display: flex;
@@ -61,7 +62,7 @@
 	margin-top: 10vh;
 }
 
-.divForDesert {
+.divForDessert {
 	justify-content: flex-start;
 	align-items: center;
 	display: flex;
@@ -88,4 +89,173 @@
 	display: flex;
 	flex-direction: column;
 	cursor: pointer;
+}
+.topBtnRecipe {
+	/* border: solid red; */
+	width: 230px;
+	height: 50px;
+	margin-right: 30px;
+}
+.topBtnAbout {
+	/* border: solid red; */
+	width: 230px;
+	height: 50px;
+	margin-top: 10vh;
+}
+.infoAboutUs {
+	font-size: 24px;
+}
+.aboutSection {
+	padding: 20px;
+	justify-content: flex-end;
+	align-items: center;
+	display: flex;
+	height: 80vh;
+}
+.familyImg {
+	width: 40%;
+	height: 40vh;
+}
+.aboutUstitle {
+	text-align: center;
+	margin-top: 10vh;
+	border-bottom: 2px solid lightgray;
+	width: 40%;
+	line-height: 60px;
+}
+.titleFood {
+	text-align: center;
+	margin-top: 10vh;
+	border-bottom: 2px solid lightgray;
+	width: 40%;
+	line-height: 60px;
+}
+
+/* All Buttons for Home */
+
+.tacoBtn {
+	width: 230px;
+	height: 50px;
+	font-size: 18px;
+}
+.hamBtn {
+	width: 230px;
+	height: 50px;
+	font-size: 18px;
+}
+.sushiBtn {
+	width: 230px;
+	height: 50px;
+	font-size: 18px;
+}
+.desertBtn {
+	width: 230px;
+	height: 50px;
+	font-size: 18px;
+}
+/* Moble Responsive  */
+
+@media (max-width: 414px) {
+	/* All btnRecipes */
+	.hamRecipeBtn {
+		/* border: solid red; */
+		margin-right: 3vw;
+		margin-top: 0vh;
+		width: 40%;
+		text-align: center;
+	}
+	.tacosRecipeBtn {
+		width: 30%;
+		height: 20vh;
+		margin-top: 0;
+		margin-left: 15vw;
+		text-align: center;
+	}
+	.sushiRecipeBtn {
+		margin-right: 3vw;
+		margin-top: 0;
+		width: 40%;
+		text-align: center;
+	}
+	.dessertRecipeBtn {
+		width: 30%;
+		height: 20vh;
+		margin-top: 0;
+		margin-left: 15vw;
+		text-align: center;
+	}
+
+	/* All Div For */
+
+	.divForHam {
+		height: 17vh;
+	}
+	.divForTacos {
+		height: 15vh;
+		margin-top: 0;
+	}
+	.divForSushi {
+		height: 17vh;
+		margin-top: 0;
+	}
+	.divForDessert {
+		height: 17vh;
+		margin-top: 0;
+	}
+	/* -------------------- */
+
+	.topBtnRecipe {
+		width: 150px;
+	}
+	.topBtnAbout {
+		width: 150px;
+	}
+	.iconsOnHome {
+		display: none;
+	}
+	.infoAboutUs {
+		font-size: 20px;
+		text-align: center;
+	}
+	.aboutSection {
+		flex-direction: column;
+		height: 55vh;
+	}
+	.familyImg {
+		width: 85%;
+		height: 20vh;
+	}
+	.aboutUstitle {
+		text-align: center;
+		width: 80%;
+		font-size: 24px;
+	}
+	.mainImg {
+		width: 100vw;
+		height: 70vh;
+	}
+	.titleRecipe {
+		font-size: 15px;
+		width: 30vw;
+	}
+	.titleFood {
+		width: 80%;
+	}
+	/* All Btns */
+	.tacoBtn {
+		width: 150px;
+		height: 40px;
+	}
+	.hamBtn {
+		width: 150px;
+		height: 40px;
+	}
+	.sushiBtn {
+		width: 150px;
+		height: 40px;
+	}
+	.desertBtn {
+		width: 150px;
+		height: 40px;
+	}
 }

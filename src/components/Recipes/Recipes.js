@@ -9,6 +9,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 // import tileData from './tileData';
 
 import ButtonBase from '@material-ui/core/ButtonBase';
@@ -196,7 +197,7 @@ export default function Recipes() {
 		<div>
 			<Navbar />
 			<div className={classes.root}>
-				<GridList className={classes.gridList}>
+				{/* <GridList className={classes.gridList}>
 					{images.map((image) => (
 						<ButtonBase
 							focusRipple
@@ -227,11 +228,26 @@ export default function Recipes() {
 							</span>
 						</ButtonBase>
 					))}
-				</GridList>
+                </GridList> */}
+				<div className="imgBackGround">
+					<div className="welcomePeople">
+						WELCOME FIND YOUR RECIPE
+						<TextField
+							autoFocus
+							id="outlined-search"
+							label="Search"
+							type="search"
+							variant="outlined"
+							className="searchBar"
+							// value={term}
+							// onChange={(e) => {
+							// 	setTerm(e.target.value);
+							// }}
+						/>
+					</div>
+				</div>
 			</div>
-			<div>
-				<h1 className="someRecipes">HERE'S SOME OF OUR RECIPES</h1>
-			</div>
+			<div className="mainSearchDiv">{/* <h1 className="someRecipes">HERE'S SOME OF OUR RECIPES</h1> */}</div>
 			<Grid>
 				<div className="mainCard">
 					<Card className={classes.card}>

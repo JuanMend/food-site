@@ -6,6 +6,7 @@ import Family from '../../Pics/family-smile.png';
 import Footer from '../Footer/Footer';
 import './Home.css';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles, useTheme } from '@material-ui/core';
 import { borders } from '@material-ui/system';
 import { fade } from '@material-ui/core/styles';
@@ -17,30 +18,26 @@ import Button from '@material-ui/core/Button';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		height: '300vh'
+		// height: '300vh'
+		// border: 'solid red'
+		backgroundColor: 'white'
 	},
 	homeImg: {
 		width: 1440,
 		height: 650
 	},
 
-	titleFood: {
-		textAlign: 'center',
-		marginTop: '10vh',
-		borderBottom: '2px solid lightgray',
-		width: '40%',
-		lineHeight: '60px'
-	},
-	aboutUstitle: {
-		textAlign: 'center',
-		marginTop: '10vh',
-		borderBottom: '2px solid lightgray',
-		width: '40%',
-		lineHeight: '60px'
-	},
+	// titleFood: {
+	// 	textAlign: 'center',
+	// 	marginTop: '10vh',
+	// 	borderBottom: '2px solid lightgray',
+	// 	width: '40%',
+	// 	lineHeight: '60px'
+	// },
 	aboutUsH1: {
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -61,12 +58,13 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'center',
 		alignItems: 'flex-end',
 		display: 'flex',
-		marginLeft: '33vw'
+		marginLeft: '33vw',
+		marginTop: '20vh'
 	},
 	topImgDiv: {
-		justifyContent: 'center',
-		alignItems: 'center',
-		display: 'flex',
+		// justifyContent: 'center',
+		// alignItems: 'center',
+		// display: 'flex',
 		width: '100%',
 		height: '80vh',
 		backgroundSize: 'cover',
@@ -75,25 +73,19 @@ const useStyles = makeStyles((theme) => ({
 		backgroundImage:
 			'url(https://images.unsplash.com/photo-1491185841098-9ce20f966624?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)'
 	},
-	familyImg: {
-		width: '40%',
-		height: '40vh'
-	},
-	aboutSection: {
-		padding: '20px',
-		// border: 'solid red',
-		justifyContent: 'flex-end',
-		alignItems: 'center',
-		display: 'flex',
-		height: '80vh'
-	},
+
 	infoAboutUs: {
 		fontSize: '30px',
 		width: '35%',
 		height: '20vh',
 		marginRight: '20px'
 	},
-
+	paper: {
+		margin: theme.spacing(8, 4),
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center'
+	},
 	// Most of the Buttons
 	btnRecipe: {
 		marginRight: '20px',
@@ -142,15 +134,17 @@ export default function Home() {
 		<div>
 			<Navbar />
 			<Grid container className={classes.root}>
-				<div className={classes.topImgDiv}>
-					<div className={classes.btnLinks}>
-						<Link to="/recipes" style={{ textDecoration: 'none' }}>
-							<Button variant="contained" color="primary" className={classes.button}>
+				<CssBaseline />
+
+				<Grid item xs={12} sm={8} md={12} className={classes.topImgDiv}>
+					<Grid item className={classes.btnLinks}>
+						<Link to="/recipes" style={{ textDecoration: 'none', marginRight: '10px' }}>
+							<Button variant="contained" color="primary" className="topBtnRecipe">
 								Recipes
 							</Button>
 						</Link>
 						<Link to="aboutus" style={{ textDecoration: 'none' }}>
-							<Button variant="contained" color="primary" className={classes.button}>
+							<Button variant="contained" color="primary" className="topBtnAbout">
 								About Us
 							</Button>
 						</Link>
@@ -159,7 +153,7 @@ export default function Home() {
 								<li>
 									<InstagramIcon
 										className="animated 2s bounce delay-1s"
-										style={{ color: 'white', fontSize: '30px' }}
+										style={{ color: 'black', fontSize: '30px' }}
 									/>
 								</li>
 								<li>
@@ -176,12 +170,12 @@ export default function Home() {
 								</li>
 							</ul>
 						</div>
-					</div>
-				</div>
+					</Grid>
+				</Grid>
 
 				<Grid>
 					<div className={classes.divH1}>
-						<h1 className={classes.titleFood}>TOP RATED FOOD</h1>
+						<h1 className="titleFood">TOP RATED FOOD</h1>
 					</div>
 
 					<div className="mainImg">
@@ -189,7 +183,7 @@ export default function Home() {
 							<div className="divForHam">
 								<div className="hamRecipeBtn">
 									<p className="titleRecipe">Get our Delicious hamburger Recipe</p>
-									<Button variant="outlined" color="primary" className={classes.button}>
+									<Button variant="outlined" color="primary" className="hamBtn">
 										Recipe
 									</Button>
 								</div>
@@ -200,7 +194,7 @@ export default function Home() {
 							<div className="divForTacos">
 								<div className="tacosRecipeBtn">
 									<p className="titleRecipe">Get our Delicious Tacos Recipe</p>
-									<Button variant="outlined" color="primary" className={classes.button}>
+									<Button variant="outlined" color="primary" className="tacoBtn">
 										Recipe
 									</Button>
 								</div>
@@ -211,7 +205,7 @@ export default function Home() {
 							<div className="divForSushi">
 								<div className="sushiRecipeBtn">
 									<p className="titleRecipe">Get our Delicious Sushi Recipe</p>
-									<Button variant="outlined" color="primary" className={classes.button}>
+									<Button variant="outlined" color="primary" className="sushiBtn">
 										Recipe
 									</Button>
 								</div>
@@ -219,10 +213,10 @@ export default function Home() {
 						</div>
 
 						<div className="hold">
-							<div className="divForDesert">
-								<div className="desertRecipeBtn">
+							<div className="divForDessert">
+								<div className="dessertRecipeBtn">
 									<p className="titleRecipe">Get our Delicious Desert Recipe</p>
-									<Button variant="outlined" color="primary" className={classes.button}>
+									<Button variant="outlined" color="primary" className="desertBtn">
 										Recipe
 									</Button>
 								</div>
@@ -231,12 +225,13 @@ export default function Home() {
 					</div>
 				</Grid>
 
-				<Grid>
+				<Grid item xs={12} sm={12} md={10}>
 					<div className={classes.aboutUsH1}>
-						<h1 className={classes.aboutUstitle}>A LITTLE ABOUT US</h1>
+						<h1 className="aboutUstitle">A LITTLE ABOUT US</h1>
 					</div>
-					<div className={classes.aboutSection}>
-						<p className={classes.infoAboutUs}>
+					<div className="aboutSection">
+						<img className="familyImg" src={Family} />
+						<p className="infoAboutUs">
 							We Help our Customers lifes a little easier by giving them the recipes of the greatest food
 							thier is to exist.
 							<Link to="/aboutus" style={{ textDecoration: 'none' }}>
@@ -245,7 +240,6 @@ export default function Home() {
 								</Button>
 							</Link>
 						</p>
-						<img className={classes.familyImg} src={Family} />
 					</div>
 				</Grid>
 				<Footer />
