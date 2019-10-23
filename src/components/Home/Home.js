@@ -51,16 +51,16 @@ const useStyles = makeStyles((theme) => ({
 		marginBottom: '4vh'
 	},
 
-	btnLinks: {
-		// border: 'solid red',
-		height: '45vh',
-		width: '65vw',
-		justifyContent: 'center',
-		alignItems: 'flex-end',
-		display: 'flex',
-		marginLeft: '33vw',
-		marginTop: '20vh'
-	},
+	// btnLinks: {
+	// 	// border: 'solid red',
+	// 	height: '45vh',
+	// 	width: '65vw',
+	// 	justifyContent: 'center',
+	// 	alignItems: 'flex-end',
+	// 	display: 'flex',
+	// 	marginLeft: '30vw',
+	// 	marginTop: '20vh'
+	// },
 	topImgDiv: {
 		// justifyContent: 'center',
 		// alignItems: 'center',
@@ -137,14 +137,24 @@ export default function Home() {
 				<CssBaseline />
 
 				<Grid item xs={12} sm={8} md={12} className={classes.topImgDiv}>
-					<Grid item className={classes.btnLinks}>
+					<Grid className="btnLinks">
 						<Link to="/recipes" style={{ textDecoration: 'none', marginRight: '10px' }}>
-							<Button variant="contained" color="primary" className="topBtnRecipe">
+							<Button
+								style={{ fontSize: '18px' }}
+								variant="contained"
+								color="primary"
+								className="topBtnRecipe"
+							>
 								Recipes
 							</Button>
 						</Link>
 						<Link to="aboutus" style={{ textDecoration: 'none' }}>
-							<Button variant="contained" color="primary" className="topBtnAbout">
+							<Button
+								style={{ fontSize: '18px' }}
+								variant="contained"
+								color="primary"
+								className="topBtnAbout"
+							>
 								About Us
 							</Button>
 						</Link>
@@ -153,7 +163,7 @@ export default function Home() {
 								<li>
 									<InstagramIcon
 										className="animated 2s bounce delay-1s"
-										style={{ color: 'black', fontSize: '30px' }}
+										style={{ color: 'white', fontSize: '30px' }}
 									/>
 								</li>
 								<li>

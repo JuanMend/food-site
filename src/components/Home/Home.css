@@ -1,3 +1,13 @@
+.btnLinks {
+	height: 45vh;
+	width: 65vw;
+	justify-content: center;
+	align-items: flex-end;
+	display: flex;
+	margin-left: 33vw;
+	margin-top: 20vh;
+}
+
 .hamRecipeBtn {
 	justify-content: center;
 	align-items: center;
@@ -205,10 +215,12 @@
 	/* -------------------- */
 
 	.topBtnRecipe {
-		width: 150px;
+		width: 170px;
+		height: 60px;
 	}
 	.topBtnAbout {
-		width: 150px;
+		width: 170px;
+		height: 60px;
 	}
 	.iconsOnHome {
 		display: none;
@@ -257,5 +269,8 @@
 	.desertBtn {
 		width: 150px;
 		height: 40px;
+	}
+	.btnLinks {
+		margin-left: 30vw;
 	}
 }
