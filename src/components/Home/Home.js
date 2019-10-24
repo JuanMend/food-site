@@ -138,7 +138,7 @@ export default function Home() {
 
 				<Grid item xs={12} sm={8} md={12} className={classes.topImgDiv}>
 					<Grid className="btnLinks">
-						<Link to="/recipes" style={{ textDecoration: 'none', marginRight: '10px' }}>
+						<Link to="/recipes" style={{ textDecoration: 'none', marginRight: '20px' }}>
 							<Button
 								style={{ fontSize: '18px' }}
 								variant="contained"
@@ -148,7 +148,7 @@ export default function Home() {
 								Recipes
 							</Button>
 						</Link>
-						<Link to="aboutus" style={{ textDecoration: 'none' }}>
+						<Link to="/aboutus" style={{ textDecoration: 'none' }}>
 							<Button
 								style={{ fontSize: '18px' }}
 								variant="contained"
@@ -235,7 +235,7 @@ export default function Home() {
 					</div>
 				</Grid>
 
-				<Grid item xs={12} sm={12} md={10}>
+				<Grid item xs={12} sm={12} md={12}>
 					<div className={classes.aboutUsH1}>
 						<h1 className="aboutUstitle">A LITTLE ABOUT US</h1>
 					</div>

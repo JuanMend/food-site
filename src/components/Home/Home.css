@@ -113,7 +113,14 @@
 	margin-top: 10vh;
 }
 .infoAboutUs {
-	font-size: 24px;
+	width: 50%;
+	font-size: 25px;
+	margin-left: 20px;
+	flex-direction: column;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	/* border: solid pink; */
 }
 .aboutSection {
 	padding: 20px;
@@ -121,6 +128,7 @@
 	align-items: center;
 	display: flex;
 	height: 80vh;
+	/* border: solid red; */
 }
 .familyImg {
 	width: 40%;
@@ -245,6 +253,7 @@
 	.mainImg {
 		width: 100vw;
 		height: 70vh;
+		/* border: solid red; */
 	}
 	.titleRecipe {
 		font-size: 15px;
@@ -252,6 +261,11 @@
 	}
 	.titleFood {
 		width: 80%;
+	}
+	.infoAboutUs {
+		margin-left: 0;
+		width: 100%;
+		font-size: 24px;
 	}
 	/* All Btns */
 	.tacoBtn {

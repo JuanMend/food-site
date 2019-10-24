@@ -1,0 +1,10 @@
+.personHelpImg {
+	width: 100%;
+	height: 55vh;
+}
+
+@media (max-width: 414px) {
+	.personHelpImg {
+		height: 40vh;
+	}
+}

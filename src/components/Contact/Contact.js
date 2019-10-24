@@ -1,4 +1,5 @@
 import React from 'react';
+import './Contact.css';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Person from '../../Pics/customer-service-phone.png';
@@ -8,10 +9,6 @@ import { makeStyles, useTheme } from '@material-ui/styles';
 import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-	personHelpImg: {
-		width: '100%',
-		height: '55vh'
-	},
 	contactTime: {
 		textAlign: 'center',
 		marginTop: '13vh'
@@ -38,7 +35,7 @@ export default function Contact() {
 			<Navbar />
 			<Grid>
 				<div>
-					<img src={Person} className={classes.personHelpImg} />
+					<img src={Person} className="personHelpImg" />
 				</div>
 				<div className={classes.contactTime}>
 					<h1>CONTACT US ANYTIME</h1>
