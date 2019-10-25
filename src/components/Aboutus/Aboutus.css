@@ -1,0 +1,39 @@
+.bodyInfo {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.insideInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	text-align: center;
+	height: 68vh;
+}
+
+.imgFourFood {
+	/* border: solid red; */
+	width: 50%;
+}
+
+.para {
+	font-size: 23px;
+	font-family: sans-serif;
+}
+
+@media (max-width: 414px) {
+	.imgFourFood {
+		width: 50%;
+		height: 40vh;
+		/* border: solid red; */
+	}
+	.insideInfo {
+		justify-content: center;
+	}
+	.para {
+		font-size: 12px;
+	}
+	.textH1 {
+		font-size: 20px;
+	}
+}

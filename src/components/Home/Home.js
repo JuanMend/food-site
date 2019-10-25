@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundRepeat: 'no-repeat',
 		backgroundPosition: 'center',
 		backgroundImage:
-			'url(https://images.unsplash.com/photo-1491185841098-9ce20f966624?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)'
+			'url(https://images.unsplash.com/photo-1531932755987-f95a88affea5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)'
 	},
 
 	infoAboutUs: {
