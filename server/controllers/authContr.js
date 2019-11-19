@@ -28,10 +28,10 @@ const login = async (req, res) => {
 			};
 			res.status(200).json(req.session.user);
 		} else {
-			res.status(403).json('username or password Incorrect');
+			res.status(403).send('username or password Incorrect');
 		}
 	} else {
-		res.status(403).json('username does not exist');
+		res.status(403).send('username does not exist');
 	}
 };
 

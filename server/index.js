@@ -5,7 +5,7 @@ const massive = require('massive');
 const app = express();
 const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 const { signup, login, logout, getUser } = require('./controllers/authContr');
-
+const { getHamburger, getPizzas, getChicken, getSushi, getDessert, getTacos } = require('./controllers/foodItems');
 app.use(express.json());
 
 massive(CONNECTION_STRING).then((db) => {
@@ -29,6 +29,13 @@ app.get('/auth/logout', logout);
 app.post('/auth/signup', signup);
 app.post('/auth/login', login);
 
+// Food Items api call
+app.get('/api/gethamburger', getHamburger);
+app.get('/api/getpizza', getPizzas);
+app.get('/api/getchicken', getChicken);
+app.get('/api/getsushi', getSushi);
+app.get('/api/gettacos', getTacos);
+app.get('/api/getdessert', getDessert);
 app.listen(SERVER_PORT, () => {
 	console.log(`Listening on ${SERVER_PORT}`);
 });

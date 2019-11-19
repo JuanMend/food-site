@@ -193,9 +193,11 @@ export default function Home() {
 							<div className="divForHam">
 								<div className="hamRecipeBtn">
 									<p className="titleRecipe">Get our Delicious hamburger Recipe</p>
-									<Button variant="outlined" color="primary" className="hamBtn">
-										Recipe
-									</Button>
+									<Link to="/recipes" style={{ textDecoration: 'none' }}>
+										<Button variant="outlined" color="primary" className="hamBtn">
+											Recipe
+										</Button>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -204,9 +206,11 @@ export default function Home() {
 							<div className="divForTacos">
 								<div className="tacosRecipeBtn">
 									<p className="titleRecipe">Get our Delicious Tacos Recipe</p>
-									<Button variant="outlined" color="primary" className="tacoBtn">
-										Recipe
-									</Button>
+									<Link to="/recipes" style={{ textDecoration: 'none' }}>
+										<Button variant="outlined" color="primary" className="tacoBtn">
+											Recipe
+										</Button>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -215,9 +219,11 @@ export default function Home() {
 							<div className="divForSushi">
 								<div className="sushiRecipeBtn">
 									<p className="titleRecipe">Get our Delicious Sushi Recipe</p>
-									<Button variant="outlined" color="primary" className="sushiBtn">
-										Recipe
-									</Button>
+									<Link to="/recipes" style={{ textDecoration: 'none' }}>
+										<Button variant="outlined" color="primary" className="sushiBtn">
+											Recipe
+										</Button>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -226,9 +232,11 @@ export default function Home() {
 							<div className="divForDessert">
 								<div className="dessertRecipeBtn">
 									<p className="titleRecipe">Get our Delicious Desert Recipe</p>
-									<Button variant="outlined" color="primary" className="desertBtn">
-										Recipe
-									</Button>
+									<Link to="/recipes" style={{ textDecoration: 'none' }}>
+										<Button variant="outlined" color="primary" className="desertBtn">
+											Recipe
+										</Button>
+									</Link>
 								</div>
 							</div>
 						</div>

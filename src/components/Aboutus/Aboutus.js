@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles((theme) => ({
 	root: {},
 	topAboutImg: {
-		height: '63vh',
+		height: '62vh',
 		width: '100%',
 		backgroundRepeat: 'no-repeat',
 		backgroundPosition: 'center',

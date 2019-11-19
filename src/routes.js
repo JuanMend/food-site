@@ -7,9 +7,16 @@ import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Recipes from './components/Recipes/Recipes';
 import Favorites from './components/Favorites/Favorites';
+import RecipeDish from './components/RecipeDish/RecipeDish';
 
 export default (
 	<Switch>
+		<Route path="/recipsushi/:sushi_id" component={RecipeDish} />
+		<Route path="/recipetacos/:tacos_id" component={RecipeDish} />
+		<Route path="/recipedessert/:dessert_id" component={RecipeDish} />
+		<Route path="/recipechicken/:chicken_id" component={RecipeDish} />
+		<Route path="/recipepizza/:pizza_id" component={RecipeDish} />
+		<Route path="/recipehamburger/:hamburger_id" component={RecipeDish} />
 		<Route path="/favorites" component={Favorites} />
 		<Route path="/recipes" component={Recipes} />
 		<Route path="/signup" component={Signup} />

@@ -1,0 +1,157 @@
+.mainHamburger {
+	/* border: solid green; */
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+.mainSushi {
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+.mainTacos {
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+.mainDessert {
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+.mainPizza {
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+.mainChicken {
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.ulList {
+	/* border: solid yellow; */
+	justify-content: space-around;
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	height: 35vh;
+}
+.liList {
+	border: solid pink;
+	width: 30%;
+	height: 30vh;
+	font-size: 20px;
+	list-style-type: none;
+}
+.btnDiv {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 5vh;
+	/* border: solid red; */
+	/* width: 40%; */
+}
+
+/* Images */
+
+.hamburgerImage {
+	width: 48%;
+	height: 45vh;
+}
+.sushiImage {
+	width: 40%;
+	height: 40vh;
+}
+.tacosImage {
+	width: 40%;
+	height: 40vh;
+}
+.dessertImage {
+	width: 40%;
+	height: 40vh;
+}
+.chickenImage {
+	width: 40%;
+	height: 40vh;
+}
+
+/* BTN */
+.recipesBtn {
+	width: 18vw;
+	height: 50px;
+	border: 2px solid #3f51b5;
+	background: transparent;
+	color: #3f51b5;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	outline: none;
+}
+.recipesBtn:hover {
+	background: #3f51b5;
+	color: white;
+	transition: 1s ease-in-out;
+}
+.homeBtn {
+	margin-right: 18px;
+	width: 18vw;
+	height: 50px;
+	border: 2px solid #3f51b5;
+	background: transparent;
+	color: #3f51b5;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	outline: none;
+}
+.homeBtn:hover {
+	background: #3f51b5;
+	color: white;
+	transition: 1s ease-in-out;
+}
+
+@media (max-width: 414px) {
+	.chickenImage {
+		width: 80%;
+		height: 25vh;
+	}
+	.hamburgerImage {
+		width: 80%;
+		height: 25vh;
+	}
+	.sushiImage {
+		width: 80%;
+		height: 25vh;
+	}
+	.tacosImage {
+		width: 80%;
+		height: 25vh;
+	}
+	.dessertImage {
+		width: 80%;
+		height: 25vh;
+	}
+	.pizzaImage {
+		width: 80%;
+		height: 25vh;
+	}
+	.recipesBtn {
+		width: 40vw;
+	}
+	.homeBtn {
+		width: 40vw;
+	}
+}
