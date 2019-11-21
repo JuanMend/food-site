@@ -18,7 +18,6 @@ const GETSUSHI = 'GETSUSHI';
 const GETTACOS = 'GETTACOS';
 const GETDESSERT = 'GETDESSERT';
 const GETFAVORITE = 'GETFAVORITE';
-const GET_FAVORITE_TWO = 'GET_FAVORITE_TWO';
 const ADDFAVORITE = 'ADDFAVORITE';
 const DELETE_FAVORITE = 'DELETE_FAVORITE';
 
@@ -32,12 +31,6 @@ export function deleteFavorite(id) {
 export function getFavorites() {
 	return {
 		type: GETFAVORITE,
-		payload: axios.get('/api/favorites')
-	};
-}
-export function getFavoritesTwo() {
-	return {
-		type: GET_FAVORITE_TWO,
 		payload: axios.get('/api/favorites')
 	};
 }
@@ -128,11 +121,7 @@ export default function food(state = initialState, action) {
 				...state,
 				favorites: [ ...payload.data ]
 			};
-		case `${GET_FAVORITE_TWO}_FULFILLED`:
-			return {
-				...state,
-				favoritesHamburger: [ ...payload.data ]
-			};
+
 		case `${ADDFAVORITE}_FULFILLED`:
 			return {
 				...state,
