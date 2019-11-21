@@ -50,6 +50,8 @@ app.get('/api/favorites', getFavorite);
 app.post('/api/favorites', addFavorite);
 app.delete('/api/favorites/:id', deleteFavorite);
 
-app.listen(SERVER_PORT, () => {
-	console.log(`Listening on ${SERVER_PORT}`);
+const PORT = 7000;
+
+app.listen(PORT, () => {
+	console.log(`Listening on ${PORT}`);
 });
