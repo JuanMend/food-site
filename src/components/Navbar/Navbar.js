@@ -80,7 +80,7 @@ function Navbar(props) {
 						</IconButton>
 						<Typography variant="h6" className={classes.title}>
 							<Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-								Recipe-Founder
+								Food-Recipes
 							</Link>
 						</Typography>
 						{props.username ? (
