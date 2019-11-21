@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { getUser } from '../../Redux/reducer';
-import { getFavorites, getFavoritesTwo, deleteFavorite, getHamburgers, getChicken } from '../../Redux/food';
+import { getFavorites, deleteFavorite, getHamburgers, getChicken } from '../../Redux/food';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './Favorites.css';
@@ -24,7 +24,6 @@ class Favorites extends React.Component {
 	componentDidMount() {
 		this.props.getUser();
 		this.props.getFavorites();
-		this.props.getFavoritesTwo();
 		this.props.getChicken();
 		this.props.getHamburgers();
 	}
@@ -120,7 +119,6 @@ const mapStateToProps = (state) => {
 	return {
 		username: state.reducer.username,
 		favorites: state.food.favorites,
-		favoritesHamburger: state.food.favorites,
 		chickens: state.food.chickens,
 		hamburgers: state.food.hamburgers
 	};
@@ -128,7 +126,6 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
 	getUser,
 	getFavorites,
-	getFavoritesTwo,
 	deleteFavorite,
 	getChicken,
 	getHamburgers

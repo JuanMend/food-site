@@ -3,7 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
 const app = express();
-const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
+const { CONNECTION_STRING, SESSION_SECRET } = process.env;
 const { signup, login, logout, getUser } = require('./controllers/authContr');
 const {
 	getHamburger,
@@ -16,6 +16,7 @@ const {
 	getFavorite,
 	deleteFavorite
 } = require('./controllers/foodItems');
+
 app.use(express.json());
 
 massive(CONNECTION_STRING).then((db) => {
