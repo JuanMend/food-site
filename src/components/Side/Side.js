@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { logOut, getUser } from '../../Redux/reducer';
+import { getFavorites } from '../../Redux/food';
 
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
@@ -56,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
 function Side(props) {
 	useEffect(() => {
 		props.getUser();
+		props.getFavorites();
 	}, []);
 
 	const classes = useStyles();
@@ -93,6 +95,7 @@ function Side(props) {
 								<ListItem button>
 									<ListItemIcon>
 										<FavoriteIcon />
+										{props.favorites.length ? `(${props.favorites.length})` : null}
 									</ListItemIcon>
 									<ListItemText primary="Favorites" />
 								</ListItem>
@@ -190,8 +193,9 @@ function Side(props) {
 
 const mapStateToProps = (state) => {
 	return {
-		username: state.reducer.username
+		username: state.reducer.username,
+		favorites: state.food.favorites
 	};
 };
 
-export default connect(mapStateToProps, { logOut, getUser })(Side);
+export default connect(mapStateToProps, { logOut, getUser, getFavorites })(Side);

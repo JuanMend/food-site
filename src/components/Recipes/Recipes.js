@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getUser } from '../../Redux/reducer';
-import { getPizza, getHamburgers, getChicken, getTacos, getDessert, getSushi } from '../../Redux/food';
+import { getPizza, getHamburgers, getChicken, getTacos, getDessert, getSushi, addFavorites } from '../../Redux/food';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Favorites from '../Favorites/Favorites';
@@ -31,7 +31,7 @@ class Recipes extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			hamburgers: []
+			search: ''
 		};
 	}
 
@@ -44,9 +44,31 @@ class Recipes extends React.Component {
 		this.props.getDessert();
 		this.props.getTacos();
 	}
+	handleSearch = (e) => {
+		this.setState({ search: e.target.value });
+	};
 	render() {
 		console.log(this.props.hamburgers);
 		console.log(this.props.pizzas);
+		let filterName = this.props.chickens.filter((val) => {
+			return val.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+		});
+		let filterHamburger = this.props.hamburgers.filter((val) => {
+			return val.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+		});
+		let filterPizza = this.props.pizzas.filter((val) => {
+			return val.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+		});
+
+		let filterSushi = this.props.sushi.filter((val) => {
+			return val.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+		});
+		let filterTacos = this.props.tacos.filter((val) => {
+			return val.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+		});
+		let filterDessert = this.props.desserts.filter((val) => {
+			return val.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+		});
 		return (
 			<div>
 				<Navbar />
@@ -54,24 +76,26 @@ class Recipes extends React.Component {
 				<div className="root">
 					<div className="imgBackGround">
 						<div className="welcomePeople">
-							WELCOME FIND YOUR RECIPE
-							{/* <TextField
+							<h1 className="welcomeTitle">WELCOME FIND YOUR RECIPE</h1>
+							<TextField
 								autoFocus
 								id="outlined-search"
 								label="Search"
 								type="search"
 								variant="outlined"
 								className="searchBar"
-								// value={term}
-								// onChange={(e) => {
-								// 	setTerm(e.target.value);
-								// }}
-							/> */}
+								onChange={this.handleSearch}
+							/>
+							{/* <form>
+								<input onChange={this.handleSearch} />
+								<button type="submit">Search</button>
+							</form> */}
 						</div>
 					</div>
 				</div>
+
 				<div className="gridCard">
-					{this.props.chickens.map((val) => {
+					{filterName.map((val) => {
 						return (
 							<div className="mainCard">
 								<Card className="card">
@@ -88,7 +112,10 @@ class Recipes extends React.Component {
 										</Typography>
 									</CardContent>
 									<CardActions disableSpacing>
-										<IconButton aria-label="add to favorites">
+										<IconButton
+											aria-label="add to favorites"
+											onClick={() => this.props.addFavorites(val)}
+										>
 											<FavoriteIcon />
 										</IconButton>
 									</CardActions>
@@ -96,7 +123,7 @@ class Recipes extends React.Component {
 							</div>
 						);
 					})}
-					{this.props.hamburgers.map((val) => {
+					{filterHamburger.map((val) => {
 						return (
 							<div className="mainCard">
 								<Card className="card">
@@ -113,7 +140,10 @@ class Recipes extends React.Component {
 										</Typography>
 									</CardContent>
 									<CardActions disableSpacing>
-										<IconButton aria-label="add to favorites">
+										<IconButton
+											aria-label="add to favorites"
+											onClick={() => this.props.addFavorites(val)}
+										>
 											<FavoriteIcon />
 										</IconButton>
 									</CardActions>
@@ -122,7 +152,7 @@ class Recipes extends React.Component {
 						);
 					})}
 
-					{this.props.pizzas.map((val) => {
+					{filterPizza.map((val) => {
 						return (
 							<div className="mainCard">
 								<Card className="card">
@@ -139,7 +169,10 @@ class Recipes extends React.Component {
 										</Typography>
 									</CardContent>
 									<CardActions disableSpacing>
-										<IconButton aria-label="add to favorites">
+										<IconButton
+											aria-label="add to favorites"
+											onClick={() => this.props.addFavorites(val)}
+										>
 											<FavoriteIcon />
 										</IconButton>
 									</CardActions>
@@ -148,7 +181,7 @@ class Recipes extends React.Component {
 						);
 					})}
 
-					{this.props.sushi.map((val) => {
+					{filterSushi.map((val) => {
 						return (
 							<div className="mainCard">
 								<Card className="card">
@@ -163,7 +196,10 @@ class Recipes extends React.Component {
 										<Typography variant="body2" color="textSecondary" component="p" />
 									</CardContent>
 									<CardActions disableSpacing>
-										<IconButton aria-label="add to favorites">
+										<IconButton
+											aria-label="add to favorites"
+											onClick={() => this.props.addFavorites(val)}
+										>
 											<FavoriteIcon />
 										</IconButton>
 									</CardActions>
@@ -171,7 +207,7 @@ class Recipes extends React.Component {
 							</div>
 						);
 					})}
-					{this.props.tacos.map((val) => {
+					{filterTacos.map((val) => {
 						return (
 							<div className="mainCard">
 								<Card className="card">
@@ -188,7 +224,10 @@ class Recipes extends React.Component {
 										</Typography>
 									</CardContent>
 									<CardActions disableSpacing>
-										<IconButton aria-label="add to favorites">
+										<IconButton
+											aria-label="add to favorites"
+											onClick={() => this.props.addFavorites(val)}
+										>
 											<FavoriteIcon />
 										</IconButton>
 									</CardActions>
@@ -197,7 +236,7 @@ class Recipes extends React.Component {
 						);
 					})}
 
-					{this.props.desserts.map((val) => {
+					{filterDessert.map((val) => {
 						return (
 							<div className="mainCard">
 								<Card className="card">
@@ -214,7 +253,10 @@ class Recipes extends React.Component {
 										</Typography>
 									</CardContent>
 									<CardActions disableSpacing>
-										<IconButton aria-label="add to favorites">
+										<IconButton
+											aria-label="add to favorites"
+											onClick={() => this.props.addFavorites(val)}
+										>
 											<FavoriteIcon />
 										</IconButton>
 									</CardActions>
@@ -238,7 +280,8 @@ const mapStateToProps = (state) => {
 		chickens: state.food.chickens,
 		sushi: state.food.sushi,
 		desserts: state.food.desserts,
-		tacos: state.food.tacos
+		tacos: state.food.tacos,
+		favorites: state.food.favorites
 	};
 };
 
@@ -249,5 +292,6 @@ export default connect(mapStateToProps, {
 	getChicken,
 	getTacos,
 	getDessert,
-	getSushi
+	getSushi,
+	addFavorites
 })(Recipes);

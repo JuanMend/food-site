@@ -10,7 +10,7 @@ const signup = async (req, res) => {
 	} else {
 		const hash = await bcrypt.hash(password, 12);
 		await db.signup_user(username, hash);
-		req.session.user = { username };
+		req.session.user = { username, favorite: [] };
 		res.status(200).json(req.session.user);
 	}
 };
@@ -24,7 +24,8 @@ const login = async (req, res) => {
 		const userMatch = await bcrypt.compare(password, user[0].password);
 		if (userMatch) {
 			req.session.user = {
-				username: user[0].username
+				username: user[0].username,
+				favorite: []
 			};
 			res.status(200).json(req.session.user);
 		} else {
@@ -45,7 +46,7 @@ const getUser = (req, res, next) => {
 
 	const { session } = req;
 	if (!session.user) {
-		session.user = { username: '' };
+		session.user = { username: '', favorite: [] };
 	}
 	res.json(session.user);
 	next();

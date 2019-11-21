@@ -6,7 +6,9 @@ const initialState = {
 	hamburgers: [],
 	sushi: [],
 	tacos: [],
-	desserts: []
+	desserts: [],
+	favorites: [],
+	favoritesHamburger: []
 };
 
 const GETPIZZA = 'GETPIZZA';
@@ -15,6 +17,37 @@ const GETHAMBURGER = 'GETHAMBURGER';
 const GETSUSHI = 'GETSUSHI';
 const GETTACOS = 'GETTACOS';
 const GETDESSERT = 'GETDESSERT';
+const GETFAVORITE = 'GETFAVORITE';
+const GET_FAVORITE_TWO = 'GET_FAVORITE_TWO';
+const ADDFAVORITE = 'ADDFAVORITE';
+const DELETE_FAVORITE = 'DELETE_FAVORITE';
+
+export function deleteFavorite(id) {
+	return {
+		type: DELETE_FAVORITE,
+		payload: axios.delete(`/api/favorites/${id}`)
+	};
+}
+
+export function getFavorites() {
+	return {
+		type: GETFAVORITE,
+		payload: axios.get('/api/favorites')
+	};
+}
+export function getFavoritesTwo() {
+	return {
+		type: GET_FAVORITE_TWO,
+		payload: axios.get('/api/favorites')
+	};
+}
+
+export function addFavorites(val) {
+	return {
+		type: ADDFAVORITE,
+		payload: axios.post('/api/favorites', val)
+	};
+}
 
 export function getHamburgers() {
 	return {
@@ -89,6 +122,26 @@ export default function food(state = initialState, action) {
 			return {
 				...state,
 				desserts: [ ...payload.data ]
+			};
+		case `${GETFAVORITE}_FULFILLED`:
+			return {
+				...state,
+				favorites: [ ...payload.data ]
+			};
+		case `${GET_FAVORITE_TWO}_FULFILLED`:
+			return {
+				...state,
+				favoritesHamburger: [ ...payload.data ]
+			};
+		case `${ADDFAVORITE}_FULFILLED`:
+			return {
+				...state,
+				favorites: [ ...payload.data ]
+			};
+		case `${DELETE_FAVORITE}_FULFILLED`:
+			return {
+				...state,
+				favorites: payload.data
 			};
 		default:
 			return state;

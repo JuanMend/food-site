@@ -1,4 +1,99 @@
-.root {
-	height: 50vh;
-	border: solid red;
+.outsideMain {
+	justify-content: space-evenly;
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 15vh;
+	/* border: solid blue; */
+}
+.mainFavorite {
+	/* border: solid red; */
+	padding: 40px;
+	justify-content: space-between;
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	width: 25vw;
+	height: 60vh;
+}
+.cardFavorite {
+	/* border: solid pink; */
+	height: 60vh;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+.cardImages {
+	width: 90%;
+}
+.mainAdd {
+	height: 80vh;
+	color: black;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+.btnRecipe {
+	width: 18vw;
+	height: 50px;
+	border: 2px solid #3f51b5;
+	background: transparent;
+	color: #3f51b5;
+	font-size: 20px;
+	cursor: pointer;
+	outline: none;
+}
+.deleteBtn {
+	margin-right: 10px;
+	width: 10vw;
+	height: 50px;
+	border: 2px solid #3f51b5;
+	background: transparent;
+	color: #3f51b5;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	outline: none;
+}
+.deleteBtn:hover {
+	background: #3f51b5;
+	color: white;
+	transition: 1s ease-in-out;
+}
+
+.recipeBtn {
+	width: 10vw;
+	height: 50px;
+	border: 2px solid #3f51b5;
+	background: transparent;
+	color: #3f51b5;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	outline: none;
+}
+.recipeBtn:hover {
+	background: #3f51b5;
+	color: white;
+	transition: 1s ease-in-out;
+}
+
+@media (max-width: 414px) {
+	.outsideMain {
+		flex-direction: column;
+	}
+	.mainFavorite {
+		width: 80%;
+	}
+	.cardFavorite {
+		height: 55vh;
+	}
+	.deleteBtn {
+		width: 30vw;
+	}
+	.recipeBtn {
+		width: 30vw;
+	}
 }

@@ -17,6 +17,12 @@ export default (
 		<Route path="/recipechicken/:chicken_id" component={RecipeDish} />
 		<Route path="/recipepizza/:pizza_id" component={RecipeDish} />
 		<Route path="/recipehamburger/:hamburger_id" component={RecipeDish} />
+		<Route path="/recipe/:pizza_id" component={RecipeDish} />
+		<Route path="/recipetwo/:chicken_id" component={RecipeDish} />
+		<Route path="/recipethree/:sushi_id" component={RecipeDish} />
+		<Route path="/recipefour/:tacos_id" component={RecipeDish} />
+		<Route path="/recipefive/:dessert_id" component={RecipeDish} />
+		<Route path="/recipesix/:hamburger_id" component={RecipeDish} />
 		<Route path="/favorites" component={Favorites} />
 		<Route path="/recipes" component={Recipes} />
 		<Route path="/signup" component={Signup} />

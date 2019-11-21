@@ -8,16 +8,7 @@ import Footer from '../Footer/Footer';
 import { makeStyles, useTheme } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles((theme) => ({
-	root: {},
-	topAboutImg: {
-		height: '62vh',
-		width: '100%',
-		backgroundRepeat: 'no-repeat',
-		backgroundPosition: 'center',
-		backgroundSize: 'cover',
-		backgroundImage:
-			'url(https://images.unsplash.com/photo-1518893494013-481c1d8ed3fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)'
-	}
+	root: {}
 }));
 
 export default function Aboutus() {
@@ -28,7 +19,7 @@ export default function Aboutus() {
 		<div>
 			<Navbar />
 			<Grid className={classes.root}>
-				<div className={classes.topAboutImg} />
+				<div className="topAboutImg" />
 				<div className="bodyInfo">
 					<img src={Four} className="imgFourFood" />
 					<div className="insideInfo">

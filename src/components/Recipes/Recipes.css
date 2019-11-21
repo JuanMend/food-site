@@ -33,18 +33,25 @@
 	width: 100%;
 	height: 60vh;
 }
-.welcomePeople {
+.welcomeTitle {
+	/* border: solid blue; */
+	width: 100%;
 	color: white;
+
+	font-size: 70px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.welcomePeople {
+	/* border: solid red; */
 	justify-content: center;
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	line-height: 150px;
+	line-height: 100px;
 	margin-top: 0vh;
 	text-align: center;
-	font-size: 75px;
+
 	height: 60vh;
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .searchBar {
 	width: 70%;
@@ -68,5 +75,8 @@
 	}
 	.mainCard {
 		width: 80%;
+	}
+	.searchBar {
+		width: 90%;
 	}
 }
