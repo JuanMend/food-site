@@ -128,6 +128,7 @@ function Login(props) {
 							</Grid>
 						</Grid>
 					</form>
+					<h1 style={{ color: 'black', fontSize: '24px' }}>Demo Credentials: user,123</h1>
 				</div>
 			</Grid>
 		</Grid>

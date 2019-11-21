@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getUser } from '../../Redux/reducer';
 import Main from '../../Pics/Main-Page.png';
 import Family from '../../Pics/family-smile.png';
 import Footer from '../Footer/Footer';
@@ -126,7 +128,10 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-export default function Home() {
+function Home(props) {
+	useEffect(() => {
+		props.getUser();
+	}, []);
 	const classes = useStyles();
 	const theme = useTheme();
 
@@ -265,3 +270,11 @@ export default function Home() {
 		</div>
 	);
 }
+
+const mapStateToProps = (state) => {
+	return {
+		username: state.reducer.username
+	};
+};
+
+export default connect(mapStateToProps, { getUser })(Home);

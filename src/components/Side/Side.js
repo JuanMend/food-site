@@ -57,7 +57,6 @@ const useStyles = makeStyles((theme) => ({
 function Side(props) {
 	useEffect(() => {
 		props.getUser();
-		props.getFavorites();
 	}, []);
 
 	const classes = useStyles();
