@@ -17,6 +17,8 @@ const {
 	deleteFavorite
 } = require('./controllers/foodItems');
 
+const PORT = 7000;
+
 app.use(express.json());
 
 massive(CONNECTION_STRING).then((db) => {
@@ -50,8 +52,6 @@ app.get('/api/getdessert', getDessert);
 app.get('/api/favorites', getFavorite);
 app.post('/api/favorites', addFavorite);
 app.delete('/api/favorites/:id', deleteFavorite);
-
-const PORT = 7000;
 
 app.listen(PORT, () => {
 	console.log(`Listening on ${PORT}`);
