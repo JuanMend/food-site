@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
+const path = require('path');
 const app = express();
 const { CONNECTION_STRING, SESSION_SECRET } = process.env;
 const { signup, login, logout, getUser } = require('./controllers/authContr');
@@ -17,8 +18,7 @@ const {
 	deleteFavorite
 } = require('./controllers/foodItems');
 
-const PORT = 7000;
-
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json());
 
 massive(CONNECTION_STRING).then((db) => {
@@ -52,6 +52,11 @@ app.get('/api/getdessert', getDessert);
 app.get('/api/favorites', getFavorite);
 app.post('/api/favorites', addFavorite);
 app.delete('/api/favorites/:id', deleteFavorite);
+
+app.get('/', function(req, res) {
+	res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+const PORT = 7000;
 
 app.listen(PORT, () => {
 	console.log(`Listening on ${PORT}`);
