@@ -1,6 +1,5 @@
 {
 	"name": "food-app",
-	"homepage": "https://www.food-recipes.xyz/#/",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
