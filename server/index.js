@@ -18,7 +18,6 @@ const {
 	deleteFavorite
 } = require('./controllers/foodItems');
 
-app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json());
 
 massive(CONNECTION_STRING).then((db) => {
@@ -53,9 +52,6 @@ app.get('/api/favorites', getFavorite);
 app.post('/api/favorites', addFavorite);
 app.delete('/api/favorites/:id', deleteFavorite);
 
-app.get('/', function(req, res) {
-	res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 const PORT = 7000;
 
 app.listen(PORT, () => {
